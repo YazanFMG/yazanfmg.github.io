@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yazan Mashaqbeh | Game Developer & Systems Engineer</title>
+  <meta name="description" content="Portfolio of Yazan Mashaqbeh — Unreal Engine Developer, Systems Engineer, AI Systems Creator, and Cybersecurity Graduate.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow glow-top-left"></div>
+  <div class="ambient-glow glow-bottom-right"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-badge">YM</span>
+        <span>Yazan Mashaqbeh</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#featured" class="nav-link">Featured Systems</a></li>
+        <li><a href="#cybersecurity" class="nav-link">CyberGuard & Sec</a></li>
+        <li><a href="#prototypes" class="nav-link">Games & Jams</a></li>
+        <li><a href="#skills" class="nav-link">Skills & Stack</a></li>
+        <li><a href="#media" class="nav-link">Yazan FMG</a></li>
+        <li><a href="#about" class="nav-link">About & Certs</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary btn-sm">Get in Touch</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text-side">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>Open to Game Studio, Systems & Security Opportunities</span>
+        </div>
+
+        <h1 class="hero-title">
+          Yazan <span class="gradient-text">Mashaqbeh</span>
+        </h1>
+        <h2 class="hero-subtitle">Game Developer • AI Systems Engineer • Cybersecurity Graduate</h2>
+
+        <p class="hero-description">
+          Bridging technical system architectures, autonomous AI behaviors, and high-performance game loops using <strong>Unreal Engine 5</strong>, <strong>C++ / Blueprints</strong>, and <strong>Flutter</strong>. Creator behind <strong>Yazan FMG</strong>.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#featured" class="btn btn-primary">
+            <i class="fa-solid fa-gamepad"></i> Explore Featured Work
+          </a>
+          <a href="https://github.com/YazanFMG" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <i class="fa-brands fa-github"></i> GitHub Profile
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <span>Connect:</span>
+          <div class="social-links">
+            <a href="https://github.com/YazanFMG" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub (YazanFMG)">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/yazan-mashaqbeh/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="YouTube (Yazan FMG)">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="mailto:yazanfmg@gmail.com" class="social-icon-btn copy-email-btn" data-email="yazanfmg@gmail.com" title="Email yazanfmg@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="hero-card">
+        <div class="engine-badge">
+          <div class="engine-info">
+            <i class="fa-brands fa-unreal" style="color: #38bdf8; font-size: 1.3rem;"></i>
+            <span>Core Focus: Unreal Engine 5 & Systems</span>
+          </div>
+          <span class="engine-tag">C++ / Blueprints</span>
+        </div>
+
+        <div class="hero-card-stats">
+          <div class="stat-item">
+            <div class="stat-num">UE5 & C++</div>
+            <div class="stat-label">Gameplay & Data Tables</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">AI & LLM</div>
+            <div class="stat-label">Voice STT / TTS NPCs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">Security+</div>
+            <div class="stat-label">782/900 First Attempt</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">B.Sc. Cyber</div>
+            <div class="stat-label">Hashemite University</div>
+          </div>
+        </div>
+
+        <div class="hero-highlights-list">
+          <div class="highlight-bullet">
+            <i class="fa-solid fa-circle-check bullet-icon"></i>
+            <span>Voice-to-Speech & Dynamic Context AI NPCs in UE5</span>
+          </div>
+          <div class="highlight-bullet">
+            <i class="fa-solid fa-circle-check bullet-icon"></i>
+            <span>Modular Data-Driven Systems & Behavior Tree AI</span>
+          </div>
+          <div class="highlight-bullet">
+            <i class="fa-solid fa-circle-check bullet-icon"></i>
+            <span>CyberGuard: ML Anti-Phishing & k-Anonymity Privacy App</span>
+          </div>
+          <div class="highlight-bullet">
+            <i class="fa-solid fa-circle-check bullet-icon"></i>
+            <span>Independent Technical Creator at <strong>Yazan FMG</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Technical Systems Section -->
+  <section id="featured">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">Flagship Systems & Engineering</span>
+        <h2 class="section-heading">Featured Technical Architecture</h2>
+        <p class="section-subtext">Deep dives into autonomous AI pipelines, data-driven game frameworks, and real-time mechanics.</p>
+      </div>
+
+      <div class="featured-grid">
+
+        <!-- FEATURED #1: AI-Powered NPC System -->
+        <article class="project-card-featured" id="ai-npc-project">
+          <div class="project-media">
+            <div class="video-player-container">
+              <video id="ai-npc-video" class="native-video-player" playsinline preload="metadata" controls>
+                <source src="assets/videos/UE5-AI-NPC-Brain.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-badge-overlay">
+                <i class="fa-solid fa-circle-play"></i> Demonstration Video
+              </div>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <div>
+              <div class="project-meta-top">
+                <span class="project-tag tag-ai">Flagship AI & Engine Architecture</span>
+                <span class="project-engine">Unreal Engine 5 • Blueprints • LLM</span>
+              </div>
+              <h3 class="project-title">UE5 AI-Powered NPC Brain</h3>
+              <p class="project-desc">
+                An advanced, zero-latency AI NPC cognitive framework built in Unreal Engine 5. Players converse naturally with in-game characters using real-time voice input. The system combines local AI inference, live speech recognition (STT/TTS), and dynamic world context injection to trigger reactive animations and quest state changes.
+              </p>
+
+              <div class="feature-box">
+                <div class="feature-box-title">System Architecture & Core Mechanics</div>
+                <ul class="feature-list">
+                  <li><strong>Voice-to-Text Pipeline (STT):</strong> Captures player microphone audio in real-time, converting speech to structured text tokens.</li>
+                  <li><strong>Dynamic World Context Injection:</strong> Feeds player inventory items, current quest objectives, nearby actors, and historical dialogue into the prompt buffer.</li>
+                  <li><strong>Local AI Processing & Low Latency:</strong> Executes lightweight local LLM reasoning without relying on slow external web APIs.</li>
+                  <li><strong>Text-to-Speech & State Triggers:</strong> AI voice synthesis synchronizes with NPC mouth blendshapes and animates custom reactions.</li>
+                </ul>
+              </div>
+
+              <div class="tech-chips">
+                <span class="tech-chip">Unreal Engine 5</span>
+                <span class="tech-chip">Local LLM Brain</span>
+                <span class="tech-chip">Speech-to-Text</span>
+                <span class="tech-chip">Text-to-Speech</span>
+                <span class="tech-chip">Context Injection</span>
+                <span class="tech-chip">State Machines</span>
+              </div>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://github.com/YazanFMG/UE5-AI-NPC-Brain" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> View GitHub Repository
+              </a>
+              <button class="btn btn-outline btn-sm play-video-trigger" data-target="ai-npc-video">
+                <i class="fa-solid fa-play"></i> Play Demo Video
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- FEATURED #2: Ranchland — Ecosystem & Behavior Trees -->
+        <article class="project-card-featured reversed">
+          <div class="project-media">
+            <div class="media-placeholder" style="background: radial-gradient(circle at center, rgba(16, 185, 129, 0.28), rgba(15, 23, 42, 0.95));">
+              <div class="media-interactive-overlay">
+                <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="play-video-btn" aria-label="Watch Ranchland Devlog">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+                <span style="font-weight: 600; font-size: 0.95rem; color: #fff;">Ranchland: 3D Farming Adventure</span>
+                <span style="font-size: 0.8rem; color: var(--text-dim);">Behavior Trees, Nesting Logic & Farming Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <div>
+              <div class="project-meta-top">
+                <span class="project-tag tag-behavior">AI & Gameplay Framework</span>
+                <span class="project-engine">Unreal Engine 5 • Behavior Trees • Blender</span>
+              </div>
+              <h3 class="project-title">Ranchland — 3D Farming Simulation & Animal AI</h3>
+              <p class="project-desc">
+                A rich 3D farming adventure bringing simulation mechanics to life in Unreal Engine 5. Combines modular grid building, crop growth stages, crafting recipes, and intelligent autonomous fauna with realistic breeding and pathfinding behavior.
+              </p>
+
+              <div class="feature-box">
+                <div class="feature-box-title">Key Engineering Implementations</div>
+                <ul class="feature-list">
+                  <li><strong>Behavior Trees & Blackboards:</strong> Hierarchical state decisions for animal roaming, hunger states, and rooster territorial awareness.</li>
+                  <li><strong>Dynamic Nest Searching & Breeding:</strong> AI hens autonomously discover player-crafted nests to lay eggs, with rooster-to-hen ratios affecting incubation rates.</li>
+                  <li><strong>Modular Building Hammer:</strong> Real-time construction system for walls, doors, floors, and machinery using modular snap points.</li>
+                  <li><strong>Multi-stage Crop Growth:</strong> Agricultural growth pipeline with soil tilling, hydration checks, and harvesting yields.</li>
+                </ul>
+              </div>
+
+              <div class="tech-chips">
+                <span class="tech-chip">Unreal Engine 5</span>
+                <span class="tech-chip">Behavior Trees</span>
+                <span class="tech-chip">AI Perception</span>
+                <span class="tech-chip">Modular Building</span>
+                <span class="tech-chip">Crafting & Inventory</span>
+                <span class="tech-chip">Blender 3D</span>
+              </div>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-youtube btn-sm">
+                <i class="fa-brands fa-youtube"></i> Watch Devlog on YouTube
+              </a>
+              <a href="https://github.com/YazanFMG" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i class="fa-brands fa-github"></i> GitHub Profile
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- FEATURED #3: Abo Flah Streamer Simulator (Data-Driven Architecture) -->
+        <article class="project-card-featured">
+          <div class="project-media">
+            <div class="media-placeholder" style="background: radial-gradient(circle at center, rgba(59, 130, 246, 0.28), rgba(15, 23, 42, 0.95));">
+              <div class="media-interactive-overlay">
+                <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="play-video-btn" aria-label="Watch Streamer Simulator Breakdown">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+                <span style="font-weight: 600; font-size: 0.95rem; color: #fff;">Streamer Studio Simulator</span>
+                <span style="font-size: 0.8rem; color: var(--text-dim);">Data-Driven Tables & In-Game Virtual OS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <div>
+              <div class="project-meta-top">
+                <span class="project-tag tag-jam">Data-Driven Game Systems</span>
+                <span class="project-engine">Unreal Engine 5 • Data Tables • Virtual OS</span>
+              </div>
+              <h3 class="project-title">Streamer Studio Simulator — Data-Driven Architecture</h3>
+              <p class="project-desc">
+                A comprehensive content creator simulation game featuring room customization, PC component upgrades, an in-game desktop OS with playable mini-games, and intelligent subscriber follower AI.
+              </p>
+
+              <div class="feature-box">
+                <div class="feature-box-title">System & Optimization Highlights</div>
+                <ul class="feature-list">
+                  <li><strong>Data Table Architecture:</strong> Unified database index driving all item IDs, prices, 3D meshes, shop UI previews, and delivery box dimensions seamlessly.</li>
+                  <li><strong>In-Game Virtual PC & Mini-Games:</strong> Programmed a functional virtual desktop supporting window scaling and nested mini-games (2D Flappy Bird UI math, 3D block building, and target shooting).</li>
+                  <li><strong>Dynamic Follower AI:</strong> Crowd spawner utilizing Behavior Trees for randomized pedestrian and subscriber interactions.</li>
+                  <li><strong>3D Mesh Optimization:</strong> Reduced Sketchfab asset footprints and normalized scales via custom Blender pipeline.</li>
+                </ul>
+              </div>
+
+              <div class="tech-chips">
+                <span class="tech-chip">Data Tables</span>
+                <span class="tech-chip">Virtual In-Game OS</span>
+                <span class="tech-chip">Behavior Trees</span>
+                <span class="tech-chip">Modular Setup</span>
+                <span class="tech-chip">Blender Pipeline</span>
+                <span class="tech-chip">UI / Slate Math</span>
+              </div>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-youtube btn-sm">
+                <i class="fa-brands fa-youtube"></i> Watch Breakdown Video
+              </a>
+              <a href="https://github.com/YazanFMG" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i class="fa-brands fa-github"></i> More Details
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Cybersecurity & Software Engineering Section -->
+  <section id="cybersecurity" style="background: rgba(10, 14, 23, 0.6); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge" style="background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">
+          <i class="fa-solid fa-shield-halved"></i> Cybersecurity & Secure Engineering
+        </span>
+        <h2 class="section-heading">CyberGuard Mobile & Security Architecture</h2>
+        <p class="section-subtext">Applying defense-in-depth principles, machine learning threat detection, and privacy-by-design engineering.</p>
+      </div>
+
+      <!-- CyberGuard Featured Card -->
+      <div class="cyberguard-showcase-card">
+        <div class="cyber-header-row">
+          <div class="cyber-brand">
+            <div class="cyber-icon"><i class="fa-solid fa-shield-virus"></i></div>
+            <div>
+              <h3 class="cyber-title">CyberGuard Mobile</h3>
+              <p class="cyber-subtitle">Comprehensive Android Security & Anti-Phishing Application • Graduation Project</p>
+            </div>
+          </div>
+          <div class="cyber-links">
+            <a href="https://github.com/YazanFMG/CyberGuard" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <i class="fa-brands fa-github"></i> GitHub Repository
+            </a>
+          </div>
+        </div>
+
+        <p class="cyber-intro-text">
+          A multi-layered Android security application built with <strong>Flutter</strong> and <strong>Dart</strong> designed to protect non-technical users from credential harvesting, malicious links, and spyware. Integrates local heuristics, external threat intelligence APIs, and a custom NLP BERT machine learning model.
+        </p>
+
+        <div class="cyber-features-grid">
+          
+          <div class="cyber-subcard">
+            <div class="subcard-icon"><i class="fa-solid fa-brain" style="color: #a78bfa;"></i></div>
+            <h4>3-Stage Phishing & URL Scanner</h4>
+            <p>1. Local structural heuristics (IP host, typosquatting TLDs, HTTP vs HTTPS).</p>
+            <p>2. Live threat intelligence (Google Safe Browsing & VirusTotal APIs).</p>
+            <p>3. Custom fine-tuned <strong>BERT Model</strong> on Hugging Face Spaces for email phishing detection via OAuth2 token integration.</p>
+          </div>
+
+          <div class="cyber-subcard">
+            <div class="subcard-icon"><i class="fa-solid fa-user-shield" style="color: #38bdf8;"></i></div>
+            <h4>k-Anonymity Breach Checker</h4>
+            <p>Verifies whether user passwords exist in public breach databases (Have I Been Pwned) without ever transmitting the full password. Hashes locally with SHA-1 and sends only a 5-character prefix to guarantee complete zero-knowledge privacy.</p>
+          </div>
+
+          <div class="cyber-subcard">
+            <div class="subcard-icon"><i class="fa-solid fa-lock" style="color: #34d399;"></i></div>
+            <h4>Encrypted Database & Keystore</h4>
+            <p>Secures sensitive application configurations and logs using <strong>AES-256-CBC</strong> backed by hardware-level <strong>Android Keystore</strong> and encrypted Hive NoSQL database storage.</p>
+          </div>
+
+          <div class="cyber-subcard">
+            <div class="subcard-icon"><i class="fa-solid fa-link" style="color: #fbbf24;"></i></div>
+            <h4>Dynamic Link Interceptor</h4>
+            <p>Catches Android Intents (WhatsApp, SMS, browser taps) using GoRouter deep linking to automatically inspect destination URLs before launching them in the default browser.</p>
+          </div>
+
+          <div class="cyber-subcard">
+            <div class="subcard-icon"><i class="fa-solid fa-mobile-screen-button" style="color: #f87171;"></i></div>
+            <h4>Spyware & Permission Auditor</h4>
+            <p>Scans installed APK permissions against high-risk surveillance combinations (e.g. <code>RECORD_AUDIO</code> + <code>READ_SMS</code> + <code>ACCESS_FINE_LOCATION</code>) to warn users about stalkerware.</p>
+          </div>
+
+          <div class="cyber-subcard">
+            <div class="subcard-icon"><i class="fa-solid fa-triangle-exclamation" style="color: #e879f9;"></i></div>
+            <h4>Emergency Lockdown Module</h4>
+            <p>One-touch rapid response module to terminate networked processes, flush temporary memory caches, and force re-authentication on critical accounts during suspected breaches.</p>
+          </div>
+
+        </div>
+
+        <div class="cyber-footer-bar">
+          <div class="tech-chips" style="margin: 0;">
+            <span class="tech-chip">Flutter & Dart</span>
+            <span class="tech-chip">Riverpod / Provider</span>
+            <span class="tech-chip">BERT NLP Model</span>
+            <span class="tech-chip">k-Anonymity</span>
+            <span class="tech-chip">AES-256-CBC</span>
+            <span class="tech-chip">Android Keystore</span>
+            <span class="tech-chip">Google Safe Browsing</span>
+            <span class="tech-chip">VirusTotal API</span>
+          </div>
+          <a href="https://github.com/YazanFMG/CyberGuard" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+            <i class="fa-brands fa-github"></i> Explore CyberGuard Code
+          </a>
+        </div>
+      </div>
+
+      <!-- Additional Cyber Labs Grid -->
+      <div class="cyber-labs-grid">
+        <div class="lab-card">
+          <div class="lab-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <div class="lab-body">
+            <h4>Active Directory Attack & Defense Home Lab</h4>
+            <p>Configured Windows Server Active Directory across VirtualBox/VMware environments. Simulated credential abuse, privilege escalation, and GPO policies, practicing detection and defense.</p>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <div class="lab-body">
+            <h4>Live Network Traffic & Packet Analysis</h4>
+            <p>Captured and dissected live traffic using Wireshark, tcpdump, and Nmap across TCP/IP, DNS, HTTP/S, and ARP. Documented anomaly signatures for SOC investigation workflows.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Experiments, Prototypes & Game Jams -->
+  <section id="prototypes">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">Game Jams & Technical Experiments</span>
+        <h2 class="section-heading">Rapid Prototypes & Mechanics Labs</h2>
+        <p class="section-subtext">Exploring game feel, physics transformations, mobile ports, and game jam constraints.</p>
+      </div>
+
+      <div class="experiments-grid">
+
+        <!-- Exp 1: Tickfall (GMTK Jam) -->
+        <div class="exp-card">
+          <div>
+            <div class="exp-header">
+              <div class="exp-icon"><i class="fa-solid fa-stopwatch" style="color: #f59e0b;"></i></div>
+              <span class="exp-badge badge-jam">GMTK Game Jam</span>
+            </div>
+            <h4 class="exp-title">Tickfall — Neon Countdown Parkour</h4>
+            <p class="exp-desc">
+              Built under strict 48-hour constraints for GMTK Jam (Theme: Count Down). 2.5D neon platformer where blocks dynamically flash and disintegrate on countdown ticks, requiring precise momentum, wall jumps, and launch pads.
+            </p>
+          </div>
+          <div class="exp-tags">
+            <span class="exp-tag">GMTK Jam</span>
+            <span class="exp-tag">2.5D Camera</span>
+            <span class="exp-tag">Physics Timing</span>
+          </div>
+        </div>
+
+        <!-- Exp 2: Take & Leap (Zanga Jam) -->
+        <div class="exp-card">
+          <div>
+            <div class="exp-header">
+              <div class="exp-icon"><i class="fa-solid fa-arrows-rotate" style="color: #38bdf8;"></i></div>
+              <span class="exp-badge badge-jam">Zanga Game Jam</span>
+            </div>
+            <h4 class="exp-title">Take & Leap (Zangas Changes)</h4>
+            <p class="exp-desc">
+              Created for Zanga Game Jam (Theme: Take & Give). Players trade and sacrifice movement abilities (Double Jump, Dash, Grappling Hook) before entering each level, built with modular Data Table ability mechanics.
+            </p>
+          </div>
+          <div class="exp-tags">
+            <span class="exp-tag">Ability Trading</span>
+            <span class="exp-tag">Grappling Physics</span>
+            <span class="exp-tag">Level Design</span>
+          </div>
+        </div>
+
+        <!-- Exp 3: Cuphead 3D Remake & Mobile Port -->
+        <div class="exp-card">
+          <div>
+            <div class="exp-header">
+              <div class="exp-icon"><i class="fa-solid fa-gamepad" style="color: #f43f5e;"></i></div>
+              <span class="exp-badge badge-proto">3D Remake & Mobile</span>
+            </div>
+            <h4 class="exp-title">Cuphead 3D Remake & Android Port</h4>
+            <p class="exp-desc">
+              Reconstructed 3D boss fights (Root Pack & Blue Slime) with custom Parry timings, health bars, and projectile pools. Solved heavy polygon bottlenecks (reduced 300k vertex meshes) to achieve smooth 60fps on mobile.
+            </p>
+          </div>
+          <div class="exp-tags">
+            <span class="exp-tag">Parry System</span>
+            <span class="exp-tag">Mesh Optimization</span>
+            <span class="exp-tag">Android Controls</span>
+          </div>
+        </div>
+
+        <!-- Exp 4: Material Launch / Critical Point -->
+        <div class="exp-card">
+          <div>
+            <div class="exp-header">
+              <div class="exp-icon"><i class="fa-solid fa-cubes-stacked" style="color: #10b981;"></i></div>
+              <span class="exp-badge badge-experiment">Soup Jam Entry</span>
+            </div>
+            <h4 class="exp-title">Material Physics & Critical Point</h4>
+            <p class="exp-desc">
+              4-day game jam prototype exploring dynamic player state transformation: Iron (heavy/destroys walls), Slime (sticks to walls), Paper (floats in air currents), and Sand (passes through grids), balancing a critical instability limit.
+            </p>
+          </div>
+          <div class="exp-tags">
+            <span class="exp-tag">State Transforms</span>
+            <span class="exp-tag">Physics Materials</span>
+            <span class="exp-tag">2.5D Aim Launch</span>
+          </div>
+        </div>
+
+        <!-- Exp 5: Looped Choices / Something in a Box -->
+        <div class="exp-card">
+          <div>
+            <div class="exp-header">
+              <div class="exp-icon"><i class="fa-solid fa-box-open" style="color: #eab308;"></i></div>
+              <span class="exp-badge badge-proto">Procedural Puzzle</span>
+            </div>
+            <h4 class="exp-title">Looped Choices (حلقة الخيارات)</h4>
+            <p class="exp-desc">
+              First-person mystery puzzle room with procedural room spawning, dynamic garbage collection for lag-free room transitions, and an interactive voice-talking box companion with multiple endings and mobile support.
+            </p>
+          </div>
+          <div class="exp-tags">
+            <span class="exp-tag">Procedural Rooms</span>
+            <span class="exp-tag">Interactive Voice Box</span>
+            <span class="exp-tag">UE5 Mobile</span>
+          </div>
+        </div>
+
+        <!-- Exp 6: Mario 3D World 1-1 Tribute -->
+        <div class="exp-card">
+          <div>
+            <div class="exp-header">
+              <div class="exp-icon"><i class="fa-solid fa-person-running" style="color: #ec4899;"></i></div>
+              <span class="exp-badge badge-proto">Fan Tribute</span>
+            </div>
+            <h4 class="exp-title">Super Mario 3D (World 1-1 Tribute)</h4>
+            <p class="exp-desc">
+              Full 3D recreation of iconic World 1-1 in Unreal Engine: interactive ? question blocks with score floats, Goomba squishing mechanics, Koopa shell sliding, secret coin tunnels, and third-person camera toggling.
+            </p>
+          </div>
+          <div class="exp-tags">
+            <span class="exp-tag">Character Controller</span>
+            <span class="exp-tag">Kinematics</span>
+            <span class="exp-tag">UE5 Lighting</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Matrix -->
+  <section id="skills" style="background: rgba(10, 14, 23, 0.6);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">Toolkit & Expertise</span>
+        <h2 class="section-heading">Technical Skills & Arsenal</h2>
+        <p class="section-subtext">The game engines, programming languages, security tools, and 3D pipelines I leverage.</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- Game Engines & Logic -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fa-solid fa-gamepad"></i></div>
+            <h3 class="skill-cat-title">Game Development & AI</h3>
+          </div>
+          <div class="skill-items-list">
+            <span class="skill-pill"><i class="fa-solid fa-bolt" style="color: #38bdf8;"></i> Unreal Engine 5 & 4</span>
+            <span class="skill-pill"><i class="fa-solid fa-diagram-project" style="color: #a78bfa;"></i> Blueprints & C++</span>
+            <span class="skill-pill"><i class="fa-solid fa-brain" style="color: #34d399;"></i> Behavior Trees & EQS</span>
+            <span class="skill-pill"><i class="fa-solid fa-database" style="color: #fbbf24;"></i> Data Tables Architecture</span>
+            <span class="skill-pill"><i class="fa-solid fa-robot" style="color: #c084fc;"></i> Voice STT / TTS & LLM</span>
+            <span class="skill-pill"><i class="fa-solid fa-person-running" style="color: #f87171;"></i> Advanced Locomotion (ALS)</span>
+            <span class="skill-pill"><i class="fa-solid fa-mobile-screen" style="color: #38bdf8;"></i> Android Game Optimization</span>
+          </div>
+        </div>
+
+        <!-- Programming & Languages -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fa-solid fa-code"></i></div>
+            <h3 class="skill-cat-title">Programming & Frameworks</h3>
+          </div>
+          <div class="skill-items-list">
+            <span class="skill-pill"><i class="fa-solid fa-code" style="color: #60a5fa;"></i> C++</span>
+            <span class="skill-pill"><i class="fa-brands fa-flutter" style="color: #38bdf8;"></i> Flutter & Dart</span>
+            <span class="skill-pill"><i class="fa-brands fa-python" style="color: #eab308;"></i> Python</span>
+            <span class="skill-pill"><i class="fa-brands fa-js" style="color: #facc15;"></i> JavaScript / HTML / CSS</span>
+            <span class="skill-pill"><i class="fa-brands fa-git-alt" style="color: #f97316;"></i> Git & GitHub</span>
+            <span class="skill-pill"><i class="fa-solid fa-network-wired" style="color: #a855f7;"></i> REST APIs & OAuth2</span>
+          </div>
+        </div>
+
+        <!-- Cybersecurity & SOC -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="skill-cat-title">Cybersecurity & Operations</h3>
+          </div>
+          <div class="skill-items-list">
+            <span class="skill-pill"><i class="fa-solid fa-certificate" style="color: #10b981;"></i> CompTIA Security+</span>
+            <span class="skill-pill"><i class="fa-solid fa-chart-line" style="color: #38bdf8;"></i> SOC Operations & Analysis</span>
+            <span class="skill-pill"><i class="fa-solid fa-network-wired" style="color: #60a5fa;"></i> Wireshark & tcpdump</span>
+            <span class="skill-pill"><i class="fa-solid fa-server" style="color: #a78bfa;"></i> Active Directory & GPO</span>
+            <span class="skill-pill"><i class="fa-solid fa-bug" style="color: #f87171;"></i> Nmap, Burp Suite, Nessus</span>
+            <span class="skill-pill"><i class="fa-brands fa-linux" style="color: #fbbf24;"></i> Kali Linux & Windows Server</span>
+          </div>
+        </div>
+
+        <!-- 3D Art & Pipelines -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+            <h3 class="skill-cat-title">3D Art & Optimization</h3>
+          </div>
+          <div class="skill-items-list">
+            <span class="skill-pill"><i class="fa-solid fa-shapes" style="color: #f97316;"></i> Blender 3D Modeling</span>
+            <span class="skill-pill"><i class="fa-solid fa-person" style="color: #38bdf8;"></i> Mixamo Rigging & Retargeting</span>
+            <span class="skill-pill"><i class="fa-solid fa-compress" style="color: #10b981;"></i> Mesh & Vertex Optimization</span>
+            <span class="skill-pill"><i class="fa-solid fa-palette" style="color: #f43f5e;"></i> Stylized Shaders & Materials</span>
+            <span class="skill-pill"><i class="fa-solid fa-camera" style="color: #a855f7;"></i> Post-Process & Lighting</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Creation / Yazan FMG -->
+  <section id="media">
+    <div class="container">
+      <div class="youtube-section-card">
+        <div class="yt-info-side">
+          <span class="section-badge" style="background: rgba(220, 38, 38, 0.15); border-color: rgba(220, 38, 38, 0.3); color: #f87171;">
+            <i class="fa-brands fa-youtube"></i> Content Creation & Devlogs
+          </span>
+          <h3 class="yt-info-title">Yazan FMG Channel</h3>
+          <p class="yt-info-desc">
+            On my channel <strong>Yazan FMG</strong>, I document game development journeys, break down Unreal Engine mechanics, and share the architectural process of building games. Demonstrates technical storytelling, community engagement, and clear communication.
+          </p>
+
+          <div class="yt-stats">
+            <div class="yt-stat-box">
+              <span class="yt-stat-num">Technical Devlogs</span>
+              <span class="yt-stat-name">Unreal Engine, AI & 3D</span>
+            </div>
+            <div class="yt-stat-box">
+              <span class="yt-stat-num">End-to-End</span>
+              <span class="yt-stat-name">Scripting, Recording & Editing</span>
+            </div>
+          </div>
+
+          <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">
+            <i class="fa-brands fa-youtube"></i> Visit Yazan FMG on YouTube
+          </a>
+        </div>
+
+        <div class="yt-video-side">
+          <div class="yt-video-embed-box">
+            <div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0b0f19; padding: 2rem; text-align: center;">
+              <i class="fa-brands fa-youtube" style="font-size: 3.5rem; color: #dc2626; margin-bottom: 1rem;"></i>
+              <h4 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.15rem;">Watch Game Devlogs & Breakdowns</h4>
+              <p style="color: var(--text-dim); font-size: 0.85rem; max-width: 320px; margin-bottom: 1.25rem;">
+                See full gameplay breakdowns, AI demonstrations, and Unreal Engine mechanics in action.
+              </p>
+              <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-youtube btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open YouTube Channel
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me & Education Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">Background & Foundations</span>
+        <h2 class="section-heading">About Me & Qualifications</h2>
+        <p class="section-subtext">A dual-threat background uniting deep computer systems engineering with game development creativity.</p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-credentials">
+          <div class="credential-item">
+            <div class="cred-icon"><i class="fa-solid fa-certificate" style="color: #10b981;"></i></div>
+            <div>
+              <div class="cred-title">CompTIA Security+ (SY0-701)</div>
+              <div class="cred-desc">Passed on 1st attempt with a score of <strong>782/900</strong> (June 2026). Validates expertise in network security, threat mitigation, and incident response.</div>
+            </div>
+          </div>
+
+          <div class="credential-item">
+            <div class="cred-icon"><i class="fa-solid fa-graduation-cap" style="color: #38bdf8;"></i></div>
+            <div>
+              <div class="cred-title">B.Sc. in Cybersecurity — The Hashemite University</div>
+              <div class="cred-desc">Graduated July 2026. Strong foundation in network protocols, operating systems, cryptographic systems, and secure application architecture.</div>
+            </div>
+          </div>
+
+          <div class="credential-item">
+            <div class="cred-icon"><i class="fa-solid fa-network-wired" style="color: #a78bfa;"></i></div>
+            <div>
+              <div class="cred-title">Cisco Networking Academy</div>
+              <div class="cred-desc">Cybersecurity Course (May 2026) covering networking fundamentals, routing concepts, and enterprise cyber defense.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <p>
+            I am a <strong>Cybersecurity Graduate</strong> and <strong>CompTIA Security+ certified</strong> developer with a passion for architecting responsive game systems and autonomous AI in <strong>Unreal Engine 5</strong>.
+          </p>
+          <p>
+            My strength lies in understanding computing from the ground up — from network packets, low-level system states, and encryption protocols, all the way to real-time game loops, Data Table pipelines, and voice-enabled LLM NPCs.
+          </p>
+          <p>
+            Whether building games from scratch under 48-hour game jam deadlines, optimizing 3D assets for mobile deployment, or sharing technical breakdowns on <strong>Yazan FMG</strong>, I bring relentless curiosity, rapid execution, and structured problem-solving to every project.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <span class="section-badge">Get in Touch</span>
+        <h2 class="contact-headline">Let's Build Something Exceptional</h2>
+        <p class="contact-desc">
+          Actively open to game studio opportunities, technical engineering roles, and innovative software projects. Reach out directly!
+        </p>
+
+        <div class="contact-actions-bar">
+          <div class="email-copy-box copy-email-btn" data-email="yazanfmg@gmail.com" title="Click to copy email">
+            <i class="fa-solid fa-envelope" style="color: var(--accent-cyan);"></i>
+            <span>yazanfmg@gmail.com</span>
+            <i class="fa-regular fa-copy" style="font-size: 0.85rem; color: var(--text-dim);"></i>
+          </div>
+
+          <a href="tel:+962775837274" class="btn btn-outline">
+            <i class="fa-solid fa-phone"></i> +962 775 837 274
+          </a>
+
+          <a href="https://www.linkedin.com/in/yazan-mashaqbeh/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+          </a>
+
+          <a href="https://github.com/YazanFMG" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+
+          <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">
+            <i class="fa-brands fa-youtube"></i> YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        © 2026 <strong>Yazan Mashaqbeh</strong> • Game Developer & Systems Engineer
+      </div>
+      <div>
+        Hosted on GitHub Pages • Amman, Jordan
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span class="toast-text">Copied to clipboard!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

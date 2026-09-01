@@ -1,0 +1,26 @@
+# .gitignore
+# Operating System files
+Thumbs.db
+.DS_Store
+
+# Node modules (if any)
+node_modules/
+
+# Build directories
+build/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Editor directories/files
+.vscode/
+.idea/
+
+# Git LFS pointer files (if using LFS)
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
