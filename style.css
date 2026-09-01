@@ -1349,6 +1349,149 @@ footer {
   line-height: 1.55;
 }
 
+/* Creative Video & Motion Production Cards */
+.creative-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.creative-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.creative-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(236, 72, 153, 0.4);
+  background: var(--bg-card-hover);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(236, 72, 153, 0.1);
+}
+
+.creative-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.creative-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.creative-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.skill-mini-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skill-mini-tags span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: #cbd5e1;
+}
+
+/* itch.io Banner Card */
+.itch-banner-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(250, 92, 92, 0.15), rgba(15, 23, 42, 0.9));
+  border: 1px solid rgba(250, 92, 92, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 25px rgba(250, 92, 92, 0.1);
+}
+
+.itch-banner-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.itch-logo-badge {
+  width: 56px;
+  height: 56px;
+  background: #fa5c5c;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(250, 92, 92, 0.5);
+  flex-shrink: 0;
+}
+
+.btn-itch {
+  background: #fa5c5c;
+  color: #fff;
+  border: 1px solid transparent;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(250, 92, 92, 0.3);
+}
+
+.btn-itch:hover {
+  background: #e04848;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(250, 92, 92, 0.5);
+}
+
+/* Resume Download Callout Box */
+.resume-download-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.itch-badge:hover {
+  background: rgba(250, 92, 92, 0.2);
+  border-color: #fa5c5c;
+  color: #fa5c5c;
+}
+
+.youtube-badge:hover {
+  background: rgba(220, 38, 38, 0.2);
+  border-color: #dc2626;
+  color: #f87171;
+}
+
 /* Responsive Styles */
 @media (max-width: 960px) {
   .hero-content, 
