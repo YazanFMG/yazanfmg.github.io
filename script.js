@@ -1,6 +1,6 @@
 // ============================================================
-// Yazan Mashaqbeh Portfolio — script.js v3.2
-// Smooth navigation, accordions, vertical phone carousel & video,
+// Yazan Mashaqbeh Portfolio — script.js v4.0
+// Clean navigation, accordions, phone carousel & video tabs,
 // and centered backdrop-blur modal system for games and media.
 // ============================================================
 
@@ -244,31 +244,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Hook up Game Cards to Detailed Centered Modal
-  const gameCards = document.querySelectorAll('.game-art-card[data-game-title]');
+  // Hook up Game Experiment Items & Cards to Detailed Centered Modal
+  const gameItems = document.querySelectorAll('.experiment-item[data-game-title], .game-art-card[data-game-title]');
 
-  gameCards.forEach(card => {
+  gameItems.forEach(card => {
     card.addEventListener('click', () => {
-      const title = card.getAttribute('data-game-title');
-      const genre = card.getAttribute('data-game-genre');
-      const img = card.getAttribute('data-game-img');
-      const desc = card.getAttribute('data-game-desc');
-      const engine = card.getAttribute('data-game-engine');
-      const time = card.getAttribute('data-game-time');
-      const role = card.getAttribute('data-game-role');
-      const url = card.getAttribute('data-game-url');
+      const title = card.getAttribute('data-game-title') || '';
+      const genre = card.getAttribute('data-game-genre') || '';
+      const img = card.getAttribute('data-game-img') || '';
+      const desc = card.getAttribute('data-game-desc') || '';
+      const engine = card.getAttribute('data-game-engine') || 'Unreal Engine 5';
+      const time = card.getAttribute('data-game-time') || 'Prototype';
+      const role = card.getAttribute('data-game-role') || 'Lead Developer';
+      const url = card.getAttribute('data-game-url') || 'https://yazanfmg.itch.io/';
 
       const modalHtml = `
-        <div class="modal-header-visual">
-          <img src="${img}" alt="${title}">
-        </div>
+        ${img ? `<div class="modal-header-visual"><img src="${img}" alt="${title}"></div>` : ''}
         <div class="modal-genre-tag">${genre}</div>
         <h3 class="modal-title">${title}</h3>
         <p class="modal-description">${desc}</p>
         <div class="modal-tech-specs">
           <div><span>Engine / Framework:</span> <span>${engine}</span></div>
-          <div><span>Development Time:</span> <span>${time}</span></div>
-          <div><span>My Contribution:</span> <span>${role}</span></div>
+          <div><span>Scope / Timeline:</span> <span>${time}</span></div>
+          <div><span>Contribution:</span> <span>${role}</span></div>
         </div>
         <div class="modal-actions">
           <a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-itch">
@@ -281,43 +279,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Hook up CyberGuard Screenshots & Videos to Centered Lightbox
-  const zoomableSlides = document.querySelectorAll('.carousel-slide[data-media-src]');
-  zoomableSlides.forEach(slide => {
-    slide.addEventListener('click', () => {
-      const src = slide.getAttribute('data-media-src');
-      const caption = slide.getAttribute('data-caption') || '';
+  // Hook up CyberGuard Screenshots & Featured Thumbs to Centered Lightbox
+  const zoomableElements = document.querySelectorAll('[data-media-src]');
+  zoomableElements.forEach(el => {
+    el.addEventListener('click', (e) => {
+      // If user clicked the native video controls inside el, don't open modal
+      if (e.target.tagName && e.target.tagName.toLowerCase() === 'video') return;
+      if (e.target.closest('a') || e.target.closest('button.carousel-btn') || e.target.closest('button.carousel-dot')) return;
 
-      const lightboxHtml = `
-        <div class="lightbox-media-box">
-          <img src="${src}" alt="${caption}">
-          <div class="lightbox-caption">${caption}</div>
-        </div>
-      `;
+      const src = el.getAttribute('data-media-src');
+      if (!src) return;
 
-      openModal(lightboxHtml, true);
-    });
-  });
+      const caption = el.getAttribute('data-caption') || '';
+      const isVideo = src.endsWith('.mp4') || src.endsWith('.webm');
+      const isVertical = el.classList.contains('carousel-slide') || el.classList.contains('phone-video-item');
 
-  const zoomableVideos = document.querySelectorAll('.phone-video-item[data-media-src]');
-  zoomableVideos.forEach(vItem => {
-    vItem.addEventListener('click', (e) => {
-      // If user clicked the native video controls, don't open modal
-      if (e.target.tagName.toLowerCase() === 'video') return;
+      let lightboxHtml = '';
+      if (isVideo) {
+        lightboxHtml = `
+          <div class="lightbox-media-box">
+            <video controls autoplay class="fullscreen-lightbox-video">
+              <source src="${src}" type="video/mp4">
+            </video>
+            ${caption ? `<div class="lightbox-caption">${caption}</div>` : ''}
+          </div>
+        `;
+      } else {
+        lightboxHtml = `
+          <div class="lightbox-media-box">
+            <img src="${src}" alt="${caption}">
+            ${caption ? `<div class="lightbox-caption">${caption}</div>` : ''}
+          </div>
+        `;
+      }
 
-      const src = vItem.getAttribute('data-media-src');
-      const caption = vItem.getAttribute('data-caption') || '';
-
-      const lightboxHtml = `
-        <div class="lightbox-media-box">
-          <video controls autoplay class="fullscreen-lightbox-video">
-            <source src="${src}" type="video/mp4">
-          </video>
-          <div class="lightbox-caption">${caption}</div>
-        </div>
-      `;
-
-      openModal(lightboxHtml, true);
+      openModal(lightboxHtml, isVertical);
     });
   });
 
