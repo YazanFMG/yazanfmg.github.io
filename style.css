@@ -1324,7 +1324,28 @@ footer {
   transform: scale(1) translateY(0);
 }
 
-.modal-container.media-lightbox-container.vertical-mode { max-width: 420px; }
+.modal-container.media-lightbox-container {
+  padding: 1.5rem;
+  background: rgba(24, 23, 21, 0.95);
+}
+
+.modal-container.media-lightbox-container.vertical-mode {
+  max-width: 380px;
+  padding: 1.25rem 1rem;
+}
+
+.modal-container.media-lightbox-container.vertical-mode .lightbox-media-box video,
+.modal-container.media-lightbox-container.vertical-mode .lightbox-media-box img {
+  max-height: 78vh;
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #000;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
 
 .modal-close-btn {
   position: absolute;
@@ -1402,9 +1423,113 @@ footer {
   color: var(--text-muted);
   margin-top: 0.75rem;
   text-align: center;
+/* Collapsible Side Projects Section */
+.collapsible-projects-wrap {
+  margin-top: 1.5rem;
 }
 
-/* Toast */
+.collapsible-trigger-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.5rem;
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.collapsible-trigger-btn:hover {
+  background: var(--bg-surface-2);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+.collapsible-trigger-btn .trigger-icon {
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+}
+
+.collapsible-trigger-btn[aria-expanded="true"] .trigger-icon {
+  transform: rotate(180deg);
+}
+
+.collapsible-body {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.collapsible-body[hidden] {
+  display: none !important;
+}
+
+.compact-side-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.compact-side-card:hover {
+  border-color: rgba(155, 135, 183, 0.4);
+}
+
+.compact-side-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.compact-side-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.compact-side-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.compact-side-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.compact-side-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.compact-side-specs span {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+}
+
 .toast-msg {
   position: fixed;
   bottom: 1.5rem;
