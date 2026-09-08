@@ -105,7 +105,7 @@ section { padding: 4.75rem 0; }
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
-  color: var(--accent-amber);
+  color: var(--section-accent, var(--accent-amber));
   text-transform: uppercase;
   margin-bottom: 0.4rem;
 }
@@ -235,26 +235,23 @@ section { padding: 4.75rem 0; }
   background: rgba(255,255,255,0.06);
   border-color: rgba(242,166,90,0.4);
   color: var(--accent-amber);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
-.btn-youtube {
-  background: #D95D5D;
-  color: #fff;
+/* btn-link: neutral chrome, brand color lives in the icon only */
+.btn-link {
+  background: rgba(255,255,255,0.03);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
 }
-.btn-youtube:hover {
-  background: #C44F4F;
-  transform: translateY(-2px);
+.btn-link i { color: var(--icon-color, var(--text-muted)); transition: var(--transition); }
+.btn-link:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--icon-color, var(--border-amber));
+  color: var(--text-main);
+  transform: translateY(-1px);
 }
-
-.btn-itch {
-  background: #FA5C5C;
-  color: #fff;
-}
-.btn-itch:hover {
-  background: #E54B4B;
-  transform: translateY(-2px);
-}
+.btn-link:hover i { color: var(--icon-color, var(--accent-amber)); }
 
 .btn-sm {
   padding: 0.42rem 0.85rem;
@@ -395,20 +392,60 @@ section { padding: 4.75rem 0; }
   padding: 0.8rem 0;
 }
 
+.proof-sep { color: var(--text-dim); }
+
+/* ---- Section-level Accent Color Wayfinding (P5) ---- */
+/* Amber stays in nav active-link and btn-primary — brand-level constant.
+   --section-accent shifts per section for labels, tags, diagram tints.  */
+#cybersecurity  { --section-accent: var(--accent-blue);   }
+#gamedev        { --section-accent: var(--accent-green);  }
+#creative,
+#side-projects  { --section-accent: var(--accent-purple); }
+
+/* Apply section-accent to the elements that use amber inside sections */
+.section-label                    { color: var(--section-accent, var(--accent-amber)); }
+.case-study-tag                   { color: var(--section-accent, var(--accent-amber)); }
+.story-label                      { color: var(--section-accent, var(--accent-amber)); }
+.diagram-title                    { color: var(--section-accent, var(--accent-amber)); }
+.diagram-arrow                    { color: var(--section-accent, var(--accent-amber)); }
+
+/* Hero action row — buttons + social icons in one flex row */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hero-actions .hero-buttons-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.hero-actions .hero-socials {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+/* Proof strip gets monospace treatment — reads as status bar */
 .proof-items {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  font-weight: 500;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.proof-sep { color: var(--text-dim); }
-
-/* ---- Clean Case Study Containers ---- */
 .case-study-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
@@ -491,10 +528,10 @@ section { padding: 4.75rem 0; }
   font-size: 0.85rem;
 }
 
-/* Limitations Notice Box */
+/* Limitations Notice Box — deliberate honest-caveat aside */
 .limitations-box {
-  background: rgba(255,255,255,0.02);
-  border-left: 3px solid var(--accent-amber);
+  background: rgba(217,93,93,0.06);
+  border-left: 3px solid var(--accent-red);
   padding: 0.85rem 1.15rem;
   margin: 1.25rem 0;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;

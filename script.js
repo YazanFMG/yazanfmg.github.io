@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div><span>Contribution:</span> <span>${role}</span></div>
         </div>
         <div class="modal-actions">
-          <a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-itch">
+          <a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-link" style="--icon-color: #FA5C5C;">
             <i class="fa-brands fa-itch-io"></i> Play & Download on itch.io
           </a>
         </div>

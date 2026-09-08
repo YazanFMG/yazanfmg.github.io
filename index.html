@@ -34,11 +34,9 @@
         <ul class="nav-menu">
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#cybersecurity" class="nav-link">Cybersecurity</a></li>
-          <li><a href="#gamedev" class="nav-link">Game Development</a></li>
-          <li><a href="#creative" class="nav-link">Creative Work</a></li>
-          <li><a href="#side-projects" class="nav-link">Side Projects</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#resume" class="nav-link">Resume</a></li>
+          <li><a href="#gamedev" class="nav-link">Game Dev</a></li>
+          <li><a href="#creative" class="nav-link">Creative</a></li>
+          <li><a href="#side-projects" class="nav-link">Projects</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -49,28 +47,29 @@
 
   <main>
     <!-- HERO SECTION -->
-    <section id="home" class="hero">
-      <div class="container hero-content">
-        <div class="hero-text-wrap">
-          <h1 class="hero-title">Yazan Mashaqbeh</h1>
-          
-          <div class="hero-pillars">
-            <span>Cybersecurity</span>
-            <span class="pillar-dot">●</span>
-            <span>Game Development</span>
-            <span class="pillar-dot">●</span>
-            <span>Creative Technology</span>
-          </div>
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="hero-text-wrap">
+        <h1 class="hero-title">Yazan Mashaqbeh</h1>
 
-          <p class="hero-tagline">
-            I build, analyze, and create. Open to opportunities across cybersecurity, game development, and technical creative roles.
-          </p>
+        <div class="hero-pillars">
+          <span>Cybersecurity</span>
+          <span class="pillar-dot">·</span>
+          <span>Game Development</span>
+          <span class="pillar-dot">·</span>
+          <span>Technical Systems</span>
+        </div>
 
-          <div class="hero-buttons">
+        <p class="hero-tagline">
+          Cybersecurity graduate with CompTIA Security+, hands-on security tool engineering, and a strong background in Unreal Engine gameplay systems and AI-powered projects.
+        </p>
+
+        <!-- P1: Buttons + socials in one row -->
+        <div class="hero-actions">
+          <div class="hero-buttons-group">
             <a href="#cybersecurity" class="btn btn-primary"><i class="fa-solid fa-arrow-down"></i> Explore Work</a>
-            <a href="#resume" class="btn btn-outline"><i class="fa-solid fa-file-lines"></i> Resume</a>
+            <a href="assets/cv/Yazan_Mashaqbeh_CV_v5.pdf" download="Yazan_Mashaqbeh_CV.pdf" class="btn btn-outline"><i class="fa-solid fa-file-lines"></i> Resume</a>
           </div>
-
           <div class="hero-socials">
             <a href="https://github.com/YazanFMG" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/yazan-mashaqbeh/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -79,20 +78,28 @@
             <button onclick="copyEmail('yazanfmg@gmail.com')" class="social-icon-btn" title="Copy Email"><i class="fa-solid fa-envelope"></i></button>
           </div>
         </div>
+      </div>
 
-        <div class="hero-card">
-          <div class="profile-avatar-box">
-            <img src="assets/images/yazan.jpg" alt="Yazan Mashaqbeh" class="profile-avatar-img" onerror="this.style.display='none'; document.querySelector('.profile-avatar-fallback').style.display='flex';">
-            <span class="profile-avatar-fallback">YM</span>
-          </div>
-          <div class="profile-name">Yazan Mashaqbeh</div>
-          <div class="profile-role"><i class="fa-solid fa-location-dot"></i> Amman, Jordan</div>
-          <div class="profile-card-desc">
-            B.Sc. in Cybersecurity · CompTIA Security+ · Unreal Engine 5 & C++ · Creator of CyberGuard & Aura Player
+      <!-- Hero Card — CURRENTLY status list -->
+      <div class="hero-card">
+        <div class="profile-avatar-box">
+          <img src="assets/images/yazan.jpg" alt="Yazan Mashaqbeh" class="profile-avatar-img" onerror="this.style.display='none'; document.querySelector('.profile-avatar-fallback').style.display='flex';">
+          <span class="profile-avatar-fallback">YM</span>
+        </div>
+        <div class="profile-name">Yazan Mashaqbeh</div>
+        <div class="profile-role"><i class="fa-solid fa-location-dot"></i> Amman, Jordan</div>
+        <div class="profile-card-desc">
+          <div style="text-align:left; display:flex; flex-direction:column; gap:0.5rem; font-size:0.84rem; color:var(--text-muted);">
+            <div>🎓 <strong style="color:var(--text-main);">Cybersecurity Graduate</strong><br><span style="font-size:0.78rem;">CompTIA Security+ · 782/900</span></div>
+            <div>🛡️ <strong style="color:var(--text-main);">Built CyberGuard Mobile</strong><br><span style="font-size:0.78rem;">Android security &amp; threat-awareness app</span></div>
+            <div>🎮 <strong style="color:var(--text-main);">Building with Unreal Engine 5</strong><br><span style="font-size:0.78rem;">Gameplay systems · AI · Blueprints</span></div>
+            <div>🤖 <strong style="color:var(--text-main);">Experimenting with Local AI</strong><br><span style="font-size:0.78rem;">Voice-enabled NPC systems</span></div>
+            <div>🎥 <strong style="color:var(--text-main);">Creating Yazan FMG</strong><br><span style="font-size:0.78rem;">Game dev &amp; technical content</span></div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- CREDENTIAL STRIP (Quiet & Clean) -->
     <div class="proof-strip">
@@ -121,15 +128,22 @@
         <div class="section-title-wrap">
           <span class="section-label">01 / Cybersecurity</span>
           <h2 class="section-heading">Defensive Security & Endpoint Analysis</h2>
-          <p class="section-subtext">Currently targeting entry-level SOC and security operations roles. Practical engineering in endpoint auditing, traffic inspection, and risk assessment.</p>
+          <p class="section-subtext">Targeting entry-level SOC analyst and security engineering roles. Practical engineering in endpoint auditing, traffic inspection, and risk assessment.</p>
         </div>
 
         <!-- FLAGSHIP CASE STUDY: CyberGuard Mobile -->
         <div class="case-study-card">
           <div class="case-study-header">
-            <span class="case-study-tag">Graduation Project · Android Security Suite</span>
-            <h3 class="case-study-title">CyberGuard Mobile — Consumer Threat & Phishing Defense</h3>
-            <p class="case-study-summary">An Android utility designed to help everyday and non-technical users spot background permission abuse, inspect deceptive URLs, and assess suspicious emails.</p>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.75rem;">
+              <div>
+                <span class="case-study-tag">Graduation Project · Android Security Suite</span>
+                <h3 class="case-study-title">CyberGuard Mobile — Consumer Threat & Phishing Defense</h3>
+                <p class="case-study-summary">An Android utility designed to help everyday and non-technical users spot background permission abuse, inspect deceptive URLs, and assess suspicious emails.</p>
+              </div>
+              <a href="https://github.com/YazanFMG/CyberGuard" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="white-space:nowrap; flex-shrink:0;">
+                <i class="fa-brands fa-github"></i> View on GitHub
+              </a>
+            </div>
           </div>
 
           <div class="cyberguard-layout">
@@ -143,9 +157,16 @@
               </div>
 
               <div class="story-block">
-                <div class="story-label">My Role — What I Personally Implemented</div>
+                <div class="story-label">My Contribution — What I Personally Built</div>
                 <p>
-                  I architected and built the full mobile client in <strong>Flutter and Dart</strong>, including the native Kotlin <code>MethodChannel</code> integrations. I implemented the Android permission auditing engine that inspects installed packages, flags dangerous permission combinations (e.g. background data + SMS + camera), wrote the real-time link inspector, integrated on-device AES-256 encrypted storage, and connected our backend phishing classifier. <em>(Note: the underlying NLP model was trained and provided by my graduation project teammate.)</em>
+                  I architected and built the full mobile client in <strong>Flutter and Dart</strong>, including the native Kotlin <code>MethodChannel</code> integrations. I implemented the Android permission auditing engine that inspects installed packages, flags dangerous permission combinations (e.g. background data + SMS + camera), wrote the real-time link inspector, and integrated on-device AES-256 encrypted storage.
+                </p>
+              </div>
+
+              <div class="story-block">
+                <div class="story-label">Teammate's Contribution</div>
+                <p>
+                  The phishing email NLP classifier was trained and provided by my graduation project teammate, integrated into the app via our shared backend API endpoint. The on-device analysis pipeline and UI were my work; the ML model training was his.
                 </p>
               </div>
 
@@ -243,23 +264,23 @@
                   <!-- Videos Panel -->
                   <div id="cg-videos-panel" class="media-tab-content hidden" style="width:100%; height:100%;">
                     <div class="phone-video-panel">
-                      <div id="cgv-auditor" class="phone-video-item" data-media-src="assets/videos/cyberguard/App Auditor.mp4" data-caption="App Auditor Demo: Scanning System Permissions">
-                        <video controls preload="metadata"><source src="assets/videos/cyberguard/App Auditor.mp4" type="video/mp4"></video>
+                      <div id="cgv-auditor" class="phone-video-item" data-media-src="assets/videos/cyberguard/App-Auditor.mp4" data-caption="App Auditor Demo: Scanning System Permissions">
+                        <video controls preload="metadata"><source src="assets/videos/cyberguard/App-Auditor.mp4" type="video/mp4"></video>
                       </div>
-                      <div id="cgv-link" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/LinkScaner.mp4" data-caption="Link Scanner Demo: URL Inspection">
-                        <video controls preload="metadata"><source src="assets/videos/cyberguard/LinkScaner.mp4" type="video/mp4"></video>
+                      <div id="cgv-link" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/Link-Scanner.mp4" data-caption="Link Scanner Demo: URL Inspection">
+                        <video controls preload="metadata"><source src="assets/videos/cyberguard/Link-Scanner.mp4" type="video/mp4"></video>
                       </div>
-                      <div id="cgv-breach" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/Password Breach Check.mp4" data-caption="Password Breach Check Demo">
-                        <video controls preload="metadata"><source src="assets/videos/cyberguard/Password Breach Check.mp4" type="video/mp4"></video>
+                      <div id="cgv-breach" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/Password-Breach-Check.mp4" data-caption="Password Breach Check Demo">
+                        <video controls preload="metadata"><source src="assets/videos/cyberguard/Password-Breach-Check.mp4" type="video/mp4"></video>
                       </div>
-                      <div id="cgv-hub" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/Security Awareness Hub.mp4" data-caption="Security Education Hub Demo">
-                        <video controls preload="metadata"><source src="assets/videos/cyberguard/Security Awareness Hub.mp4" type="video/mp4"></video>
+                      <div id="cgv-hub" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/Security-Awareness-Hub.mp4" data-caption="Security Education Hub Demo">
+                        <video controls preload="metadata"><source src="assets/videos/cyberguard/Security-Awareness-Hub.mp4" type="video/mp4"></video>
                       </div>
-                      <div id="cgv-recover" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/I Got Hacked — Recover Account.mp4" data-caption="Account Recovery Protocol Demo">
-                        <video controls preload="metadata"><source src="assets/videos/cyberguard/I Got Hacked — Recover Account.mp4" type="video/mp4"></video>
+                      <div id="cgv-recover" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/I-Got-Hacked-Recover-Account.mp4" data-caption="Account Recovery Protocol Demo">
+                        <video controls preload="metadata"><source src="assets/videos/cyberguard/I-Got-Hacked-Recover-Account.mp4" type="video/mp4"></video>
                       </div>
-                      <div id="cgv-secure" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/I Got Hacked — Secure Device.mp4" data-caption="Device Isolation Protocol Demo">
-                        <video controls preload="metadata"><source src="assets/videos/cyberguard/I Got Hacked — Secure Device.mp4" type="video/mp4"></video>
+                      <div id="cgv-secure" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/I-Got-Hacked-Secure-Device.mp4" data-caption="Device Isolation Protocol Demo">
+                        <video controls preload="metadata"><source src="assets/videos/cyberguard/I-Got-Hacked-Secure-Device.mp4" type="video/mp4"></video>
                       </div>
                     </div>
                   </div>
@@ -435,7 +456,7 @@
                 <li><i class="fa-solid fa-check"></i> Dynamic inventory economics & barter shop</li>
               </ul>
               <div style="margin-top: auto;">
-                <a href="https://yazanfmg.itch.io/ranch-land" target="_blank" rel="noopener noreferrer" class="btn btn-itch btn-sm">
+                <a href="https://yazanfmg.itch.io/ranch-land" target="_blank" rel="noopener noreferrer" class="btn btn-link btn-sm" style="--icon-color: #FA5C5C;">
                   <i class="fa-brands fa-itch-io"></i> Play on itch.io
                 </a>
               </div>
@@ -609,25 +630,25 @@
               <span class="yt-video-type"><i class="fa-solid fa-wrench"></i> Technical Deep Dive</span>
               <div class="yt-video-title">Porting 2D Mechanics to 3D in Unreal Engine 5</div>
               <p class="yt-video-desc">Step-by-step breakdown of hitbox calculation, multi-phase boss state machines, and dynamic camera framing.</p>
-              <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top: auto;">
+              <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-link btn-sm" style="margin-top: auto; --icon-color: #FF0033;">
                 <i class="fa-brands fa-youtube"></i> Watch on YouTube
               </a>
             </div>
 
             <div class="yt-video-card">
               <span class="yt-video-type"><i class="fa-solid fa-gamepad"></i> Game Dev Diary</span>
-              <div class="yt-video-title">Building a Game in 48 Hours: Progress & Pitfalls</div>
+              <div class="yt-video-title">Building a Game in 48 Hours: Progress &amp; Pitfalls</div>
               <p class="yt-video-desc">Honest devlog covering time management, cutting scope under deadline pressure, and rapid prototype tuning.</p>
-              <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top: auto;">
+              <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-link btn-sm" style="margin-top: auto; --icon-color: #FF0033;">
                 <i class="fa-brands fa-youtube"></i> Watch on YouTube
               </a>
             </div>
 
             <div class="yt-video-card">
-              <span class="yt-video-type"><i class="fa-solid fa-scissors"></i> Narrative & Storytelling</span>
-              <div class="yt-video-title">Revisiting & Fixing My Worst Old Projects</div>
+              <span class="yt-video-type"><i class="fa-solid fa-scissors"></i> Narrative &amp; Storytelling</span>
+              <div class="yt-video-title">Revisiting &amp; Fixing My Worst Old Projects</div>
               <p class="yt-video-desc">Comparing early code and unoptimized assets to current standards, showing concrete skill progression over time.</p>
-              <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top: auto;">
+              <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-link btn-sm" style="margin-top: auto; --icon-color: #FF0033;">
                 <i class="fa-brands fa-youtube"></i> Watch on YouTube
               </a>
             </div>
@@ -712,67 +733,50 @@
                 <div><strong>Controls:</strong> Frame-by-frame stepping, 0.1x - 16x variable speed, PiP mode.</div>
               </div>
             </div>
+        <!-- SECOND SIDE PROJECT: Creator Studio PRO -->
+        <div class="case-study-card" style="margin-top: 2rem;">
+          <div class="case-study-header">
+            <span class="case-study-tag">Desktop Application · Electron &amp; Node.js</span>
+            <h3 class="case-study-title">Creator Studio PRO — Desktop Video Overlay &amp; Dynamic Speech Suite</h3>
+            <p class="case-study-summary">A desktop workflow utility that automates social media graphics, speech-synced typography, and broadcast-grade transparent video overlays for video editors.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: start;">
+            <div>
+              <div class="story-block">
+                <div class="story-label">Why I Built It</div>
+                <p>
+                  Creating animated social media pop-ups and timed speech subtitles in editors like Premiere Pro is manually repetitive. I built a dedicated Electron app that ingests YouTube data, runs real-time 60 FPS motion canvas physics, transcribes audio locally with Whisper, and renders alpha video that drags directly into editor timelines.
+                </p>
+              </div>
+
+              <div class="story-block">
+                <div class="story-label">Core Architecture &amp; Features</div>
+                <ul class="acc-feature-list">
+                  <li><strong>60 FPS Canvas Motion Physics:</strong> Custom mathematical formulas for spring dampening, elastic bounce, and interactive drag-to-position preview.</li>
+                  <li><strong>Whisper ASR &amp; Waveform Alignment:</strong> Bilingual speech-to-text (Arabic &amp; English) with Web Audio API waveform peak visualization and energy onset detection.</li>
+                  <li><strong>Headless Alpha Video Pipeline:</strong> Transparent Chromium rasterizer paired with FFmpeg to encode ProRes 4444 and WebM with alpha channels.</li>
+                  <li><strong>Native NLE Drag-and-Drop:</strong> Integrated OS-level <code>webContents.startDrag</code> allowing editors to drag rendered clips straight onto their video timeline.</li>
+                  <li><strong>OS-Level Credential Protection:</strong> YouTube Data API keys encrypted at rest via Electron <code>safeStorage</code> (Windows DPAPI).</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-surface-2); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <div class="story-label" style="margin-bottom: 0.75rem;">Tech Stack &amp; Protocols</div>
+              <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; display: flex; flex-direction: column; gap: 0.6rem;">
+                <div><strong>Runtime:</strong> Electron, Node.js, Chromium</div>
+                <div><strong>Frontend:</strong> Vanilla ES6+, HTML5 Canvas 2D, Web Audio API</div>
+                <div><strong>Rendering:</strong> FFmpeg (ProRes 4444 <code>yuva444p10le</code>, WebM VP9)</div>
+                <div><strong>AI &amp; Speech:</strong> Whisper ASR, Client-side RMS Onset Detection</div>
+                <div><strong>Security:</strong> Context-isolated <code>contextBridge</code>, DPAPI encryption</div>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
     </section>
-
-    <!-- ============================================================
-         SELECTED SKILLS & TOOLS INVENTORY (Cross-disciplinary)
-         ============================================================ -->
-    <div class="container">
-      <div class="tools-inventory-card">
-        <h3 style="font-size: 1.3rem; margin-bottom: 1.25rem;">Tools I Use</h3>
-        <div class="tools-inventory-grid">
-          <div class="tools-column">
-            <h4>Security</h4>
-            <div class="tools-pills-row">
-              <span>Wireshark</span>
-              <span>Nmap</span>
-              <span>Burp Suite</span>
-              <span>Linux</span>
-              <span>Active Directory</span>
-              <span>Splunk</span>
-            </div>
-          </div>
-
-          <div class="tools-column">
-            <h4>Development</h4>
-            <div class="tools-pills-row">
-              <span>Unreal Engine 5</span>
-              <span>Blueprints</span>
-              <span>C++</span>
-              <span>Flutter / Dart</span>
-              <span>Git</span>
-              <span>Electron</span>
-            </div>
-          </div>
-
-          <div class="tools-column">
-            <h4>AI & Systems</h4>
-            <div class="tools-pills-row">
-              <span>Local LLMs</span>
-              <span>Whisper STT</span>
-              <span>Piper TTS</span>
-              <span>Hugging Face</span>
-              <span>Python</span>
-            </div>
-          </div>
-
-          <div class="tools-column">
-            <h4>Creative</h4>
-            <div class="tools-pills-row">
-              <span>Blender 3D</span>
-              <span>Premiere Pro</span>
-              <span>After Effects</span>
-              <span>Photoshop</span>
-              <span>Mixamo</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- ============================================================
          04 / ABOUT
@@ -824,6 +828,59 @@
             </div>
           </div>
         </div>
+
+        <!-- STACK & TOOLS (Moved inside About) -->
+        <div class="tools-inventory-card" style="margin-top: 2.5rem;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1.25rem;"><i class="fa-solid fa-layer-group" style="color: var(--accent-amber); margin-right: 0.5rem;"></i> Technical Toolkit</h3>
+          <div class="tools-inventory-grid">
+            <div class="tools-column">
+              <h4 style="color: var(--accent-blue);">Security</h4>
+              <div class="tools-pills-row">
+                <span>Wireshark</span>
+                <span>Nmap</span>
+                <span>Burp Suite</span>
+                <span>Linux</span>
+                <span>Active Directory</span>
+                <span>Splunk</span>
+              </div>
+            </div>
+
+            <div class="tools-column">
+              <h4 style="color: var(--accent-green);">Development</h4>
+              <div class="tools-pills-row">
+                <span>Unreal Engine 5</span>
+                <span>Blueprints</span>
+                <span>C++</span>
+                <span>Flutter / Dart</span>
+                <span>Git</span>
+                <span>Electron</span>
+              </div>
+            </div>
+
+            <div class="tools-column">
+              <h4 style="color: var(--accent-purple);">AI &amp; Systems</h4>
+              <div class="tools-pills-row">
+                <span>Local LLMs</span>
+                <span>Whisper STT</span>
+                <span>Piper TTS</span>
+                <span>Hugging Face</span>
+                <span>Python</span>
+              </div>
+            </div>
+
+            <div class="tools-column">
+              <h4 style="color: var(--accent-amber);">Creative</h4>
+              <div class="tools-pills-row">
+                <span>Blender 3D</span>
+                <span>Premiere Pro</span>
+                <span>After Effects</span>
+                <span>Photoshop</span>
+                <span>Mixamo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -869,7 +926,7 @@
           <span class="section-label">06 / Contact</span>
           <h2 class="contact-headline">Let's Connect</h2>
           <p class="contact-desc">
-            Open to opportunities in cybersecurity, game development, and creative technology.
+            Open to entry-level SOC, security engineering, and game development roles.
           </p>
 
           <div class="contact-methods-grid">
@@ -894,6 +951,14 @@
               <div class="method-text">
                 <span class="method-label">GitHub</span>
                 <span class="method-value">YazanFMG</span>
+              </div>
+            </a>
+
+            <a href="assets/cv/Yazan_Mashaqbeh_CV_v5.pdf" download="Yazan_Mashaqbeh_CV.pdf" class="contact-method-item">
+              <div class="method-icon"><i class="fa-solid fa-file-pdf" style="color: var(--accent-red);"></i></div>
+              <div class="method-text">
+                <span class="method-label">Resume</span>
+                <span class="method-value">Download PDF (v5)</span>
               </div>
             </a>
           </div>
