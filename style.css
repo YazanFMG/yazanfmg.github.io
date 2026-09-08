@@ -384,6 +384,37 @@ section { padding: 4.75rem 0; }
   width: 100%;
 }
 
+.hero-status-list {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.hero-status-item strong:last-of-type {
+  color: var(--text-main);
+}
+
+.hero-status-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.hero-status-label.amber  { color: var(--accent-amber); }
+.hero-status-label.blue   { color: var(--accent-blue); }
+.hero-status-label.green  { color: var(--accent-green); }
+.hero-status-label.purple { color: var(--accent-purple); }
+
+.hero-status-sub {
+  font-size: 0.78rem;
+}
+
 /* ---- Quiet Credential Strip ---- */
 .proof-strip {
   border-top: 1px solid var(--border-color);
@@ -464,7 +495,6 @@ section { padding: 4.75rem 0; }
 .case-study-tag {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--accent-amber);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   display: block;
@@ -497,7 +527,6 @@ section { padding: 4.75rem 0; }
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--accent-amber);
   margin-bottom: 0.85rem;
   display: flex;
   align-items: center;
@@ -523,7 +552,6 @@ section { padding: 4.75rem 0; }
 }
 
 .diagram-arrow {
-  color: var(--accent-amber);
   font-weight: 700;
   font-size: 0.85rem;
 }
@@ -558,7 +586,6 @@ section { padding: 4.75rem 0; }
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--accent-amber);
   margin-bottom: 0.35rem;
 }
 
