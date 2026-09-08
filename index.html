@@ -35,7 +35,7 @@
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#cybersecurity" class="nav-link">Cybersecurity</a></li>
           <li><a href="#gamedev" class="nav-link">Game Dev</a></li>
-          <li><a href="#creative" class="nav-link">Creative</a></li>
+          <li><a href="#creative" class="nav-link">Creative & 3D</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#resume" class="nav-link">Resume</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -63,7 +63,7 @@
           </h1>
           <div class="hero-subtitle">Cybersecurity Graduate & Technical Creator</div>
           <p class="hero-description">
-            B.Sc. in Cybersecurity and CompTIA Security+ certified. I build practical defensive security applications, prototype intelligent systems in Unreal Engine 5, and produce technical creative media.
+            B.Sc. in Cybersecurity and CompTIA Security+ certified. I engineer practical defensive security tools, architect low-latency AI & gameplay systems in Unreal Engine 5, and produce technical 3D visual media.
           </p>
 
           <div class="hero-buttons">
@@ -109,7 +109,7 @@
               </li>
               <li>
                 <span class="curr-icon">🎬</span>
-                <span>Video editing & tech breakdown content on Yazan FMG</span>
+                <span>Video editing, scripting & 3D breakdowns on Yazan FMG</span>
               </li>
             </ul>
           </div>
@@ -197,109 +197,129 @@
                     </div>
                   </div>
 
-                  <!-- Right: Interactive Media Showcase (Screenshots & Video Switcher) -->
-                  <div class="cg-media-column">
+                  <!-- Right: Smartphone Frame Mockup with Vertical Aspect Ratio -->
+                  <div class="phone-mockup-wrapper">
+                    <!-- Media Nav Switcher -->
                     <div class="media-tabs-nav">
                       <button class="media-tab-btn active" data-tab="cg-screenshots-panel">
                         <i class="fa-solid fa-images"></i> Screenshots (5)
                       </button>
                       <button class="media-tab-btn" data-tab="cg-videos-panel">
-                        <i class="fa-solid fa-play"></i> Feature Videos (6)
+                        <i class="fa-solid fa-play"></i> Videos (6)
                       </button>
                     </div>
 
-                    <!-- Panel 1: Image Carousel -->
-                    <div id="cg-screenshots-panel" class="media-tab-content">
-                      <div class="img-carousel">
-                        <div class="carousel-track">
-                          <div class="carousel-slide">
-                            <img src="assets/images/cyberguard/HomeScreen.jpeg" alt="CyberGuard Home Dashboard">
-                            <div class="slide-caption">Dashboard: System Health & Risk Overview</div>
-                          </div>
-                          <div class="carousel-slide">
-                            <img src="assets/images/cyberguard/AppPermissionsTab.jpeg" alt="App Permissions Auditor">
-                            <div class="slide-caption">Permission Auditor: High-Risk Permission Analysis</div>
-                          </div>
-                          <div class="carousel-slide">
-                            <img src="assets/images/cyberguard/AppsDataUsage.jpeg" alt="Apps Data Usage">
-                            <div class="slide-caption">Network Monitor: Background App Data Tracking</div>
-                          </div>
-                          <div class="carousel-slide">
-                            <img src="assets/images/cyberguard/GmailPhishingScanner.jpeg" alt="Gmail Phishing Scanner">
-                            <div class="slide-caption">Phishing Analyzer: NLP Email Content Evaluation</div>
-                          </div>
-                          <div class="carousel-slide">
-                            <img src="assets/images/cyberguard/LinkScanner.jpeg" alt="Malicious Link Scanner">
-                            <div class="slide-caption">Link Scanner: Suspicious URL & Redirect Verification</div>
-                          </div>
-                        </div>
-                        <button class="carousel-btn carousel-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="carousel-btn carousel-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
-                        <div class="carousel-dots">
-                          <button class="carousel-dot active"></button>
-                          <button class="carousel-dot"></button>
-                          <button class="carousel-dot"></button>
-                          <button class="carousel-dot"></button>
-                          <button class="carousel-dot"></button>
-                        </div>
-                      </div>
+                    <!-- Video Selector Buttons (when in video mode) -->
+                    <div id="cg-video-subnav" class="vtab-nav phone-vtab-nav hidden">
+                      <button class="vtab-btn active" data-video="cgv-auditor">Auditor</button>
+                      <button class="vtab-btn" data-video="cgv-link">Link</button>
+                      <button class="vtab-btn" data-video="cgv-breach">Breach</button>
+                      <button class="vtab-btn" data-video="cgv-hub">Hub</button>
+                      <button class="vtab-btn" data-video="cgv-recover">Recover</button>
+                      <button class="vtab-btn" data-video="cgv-secure">Secure</button>
                     </div>
 
-                    <!-- Panel 2: Video Feature Switcher -->
-                    <div id="cg-videos-panel" class="media-tab-content hidden">
-                      <div class="video-tab-panel">
-                        <div class="vtab-nav">
-                          <button class="vtab-btn active" data-video="cgv-auditor">App Auditor</button>
-                          <button class="vtab-btn" data-video="cgv-link">Link Scanner</button>
-                          <button class="vtab-btn" data-video="cgv-breach">Breach Check</button>
-                          <button class="vtab-btn" data-video="cgv-hub">Awareness Hub</button>
-                          <button class="vtab-btn" data-video="cgv-recover">Account Recover</button>
-                          <button class="vtab-btn" data-video="cgv-secure">Device Secure</button>
+                    <!-- Physical Phone Frame Mockup -->
+                    <div class="phone-mockup-frame">
+                      <div class="phone-mockup-notch"></div>
+                      
+                      <div class="phone-screen-content">
+                        <!-- Panel 1: Vertical Screenshots Carousel -->
+                        <div id="cg-screenshots-panel" class="media-tab-content" style="width:100%; height:100%;">
+                          <div class="img-carousel vertical-carousel">
+                            <div class="carousel-track">
+                              <div class="carousel-slide" data-media-type="image" data-media-src="assets/images/cyberguard/HomeScreen.jpeg" data-caption="CyberGuard Dashboard: System Health & Threat Overview">
+                                <img src="assets/images/cyberguard/HomeScreen.jpeg" alt="CyberGuard Home Dashboard">
+                                <div class="slide-caption">Dashboard: Health Overview</div>
+                                <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                              </div>
+                              <div class="carousel-slide" data-media-type="image" data-media-src="assets/images/cyberguard/AppPermissionsTab.jpeg" data-caption="App Permission Auditor: Identifying High-Risk System Access">
+                                <img src="assets/images/cyberguard/AppPermissionsTab.jpeg" alt="App Permissions Auditor">
+                                <div class="slide-caption">Permission Auditor</div>
+                                <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                              </div>
+                              <div class="carousel-slide" data-media-type="image" data-media-src="assets/images/cyberguard/AppsDataUsage.jpeg" data-caption="Apps Data Usage: Background Traffic Analysis & Monitoring">
+                                <img src="assets/images/cyberguard/AppsDataUsage.jpeg" alt="Apps Data Usage">
+                                <div class="slide-caption">Data Usage Monitor</div>
+                                <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                              </div>
+                              <div class="carousel-slide" data-media-type="image" data-media-src="assets/images/cyberguard/GmailPhishingScanner.jpeg" data-caption="Gmail Phishing Scanner: On-Device NLP Email Assessment">
+                                <img src="assets/images/cyberguard/GmailPhishingScanner.jpeg" alt="Gmail Phishing Scanner">
+                                <div class="slide-caption">Phishing Analyzer</div>
+                                <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                              </div>
+                              <div class="carousel-slide" data-media-type="image" data-media-src="assets/images/cyberguard/LinkScanner.jpeg" data-caption="Link Scanner: Malicious URL Heuristics & Redirect Auditing">
+                                <img src="assets/images/cyberguard/LinkScanner.jpeg" alt="Malicious Link Scanner">
+                                <div class="slide-caption">Link Scanner</div>
+                                <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                              </div>
+                            </div>
+                            <button class="carousel-btn carousel-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="carousel-btn carousel-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="carousel-dots">
+                              <button class="carousel-dot active"></button>
+                              <button class="carousel-dot"></button>
+                              <button class="carousel-dot"></button>
+                              <button class="carousel-dot"></button>
+                              <button class="carousel-dot"></button>
+                            </div>
+                          </div>
                         </div>
 
-                        <div class="cg-video-container">
-                          <div id="cgv-auditor" class="cg-video-item">
-                            <video controls class="cg-video" preload="metadata">
-                              <source src="assets/videos/cyberguard/App Auditor.mp4" type="video/mp4">
-                            </video>
-                          </div>
-                          <div id="cgv-link" class="cg-video-item hidden">
-                            <video controls class="cg-video" preload="metadata">
-                              <source src="assets/videos/cyberguard/LinkScaner.mp4" type="video/mp4">
-                            </video>
-                          </div>
-                          <div id="cgv-breach" class="cg-video-item hidden">
-                            <video controls class="cg-video" preload="metadata">
-                              <source src="assets/videos/cyberguard/Password Breach Check.mp4" type="video/mp4">
-                            </video>
-                          </div>
-                          <div id="cgv-hub" class="cg-video-item hidden">
-                            <video controls class="cg-video" preload="metadata">
-                              <source src="assets/videos/cyberguard/Security Awareness Hub.mp4" type="video/mp4">
-                            </video>
-                          </div>
-                          <div id="cgv-recover" class="cg-video-item hidden">
-                            <video controls class="cg-video" preload="metadata">
-                              <source src="assets/videos/cyberguard/I Got Hacked — Recover Account.mp4" type="video/mp4">
-                            </video>
-                          </div>
-                          <div id="cgv-secure" class="cg-video-item hidden">
-                            <video controls class="cg-video" preload="metadata">
-                              <source src="assets/videos/cyberguard/I Got Hacked — Secure Device.mp4" type="video/mp4">
-                            </video>
+                        <!-- Panel 2: Vertical Video Player in Phone Frame -->
+                        <div id="cg-videos-panel" class="media-tab-content hidden" style="width:100%; height:100%;">
+                          <div class="phone-video-panel">
+                            <div id="cgv-auditor" class="phone-video-item" data-media-type="video" data-media-src="assets/videos/cyberguard/App Auditor.mp4" data-caption="Demo: Auditing Installed Android Apps for Dangerous Permissions">
+                              <video controls preload="metadata">
+                                <source src="assets/videos/cyberguard/App Auditor.mp4" type="video/mp4">
+                              </video>
+                              <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <div id="cgv-link" class="phone-video-item hidden" data-media-type="video" data-media-src="assets/videos/cyberguard/LinkScaner.mp4" data-caption="Demo: Real-time Malicious Link and URL Detection">
+                              <video controls preload="metadata">
+                                <source src="assets/videos/cyberguard/LinkScaner.mp4" type="video/mp4">
+                              </video>
+                              <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <div id="cgv-breach" class="phone-video-item hidden" data-media-type="video" data-media-src="assets/videos/cyberguard/Password Breach Check.mp4" data-caption="Demo: Password Compromise & Leak Database Check">
+                              <video controls preload="metadata">
+                                <source src="assets/videos/cyberguard/Password Breach Check.mp4" type="video/mp4">
+                              </video>
+                              <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <div id="cgv-hub" class="phone-video-item hidden" data-media-type="video" data-media-src="assets/videos/cyberguard/Security Awareness Hub.mp4" data-caption="Demo: Security Awareness Education Hub for Non-Technical Users">
+                              <video controls preload="metadata">
+                                <source src="assets/videos/cyberguard/Security Awareness Hub.mp4" type="video/mp4">
+                              </video>
+                              <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <div id="cgv-recover" class="phone-video-item hidden" data-media-type="video" data-media-src="assets/videos/cyberguard/I Got Hacked — Recover Account.mp4" data-caption="Demo: Incident Response Flow — Recovering Hacked Accounts">
+                              <video controls preload="metadata">
+                                <source src="assets/videos/cyberguard/I Got Hacked — Recover Account.mp4" type="video/mp4">
+                              </video>
+                              <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <div id="cgv-secure" class="phone-video-item hidden" data-media-type="video" data-media-src="assets/videos/cyberguard/I Got Hacked — Secure Device.mp4" data-caption="Demo: Incident Response Flow — Immediate Device Isolation & Lockdown">
+                              <video controls preload="metadata">
+                                <source src="assets/videos/cyberguard/I Got Hacked — Secure Device.mp4" type="video/mp4">
+                              </video>
+                              <div class="zoom-overlay-hint"><i class="fa-solid fa-expand"></i></div>
+                            </div>
                           </div>
                         </div>
+
                       </div>
                     </div>
-
+                    <div class="phone-fullscreen-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Click screen to view full size</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- CARD 2: CompTIA Security+ Certification -->
-          <div class="accordion-card">
+          <!-- CARD 2: CompTIA Security+ Certification with PDF Artwork Background -->
+          <div class="accordion-card comptia-card">
+            <div class="cert-bg-overlay"></div>
             <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-securityplus">
               <div class="acc-trigger-left">
                 <span class="acc-mono">Certification · CompTIA SY0-701</span>
@@ -443,7 +463,7 @@
                     </div>
                   </div>
 
-                  <div class="ainpc-video-wrap">
+                  <div class="ainpc-video-wrap" data-media-type="video" data-media-src="assets/videos/UE5-AI-NPC-Brain.mp4" data-caption="Unreal Engine 5: Real-time Speech-to-Speech Local LLM Demo">
                     <div class="video-player-container">
                       <video controls class="native-video-player" preload="metadata">
                         <source src="assets/videos/UE5-AI-NPC-Brain.mp4" type="video/mp4">
@@ -461,84 +481,171 @@
 
         </div>
 
-        <!-- Game Jams & itch.io Showcase -->
+        <!-- Playable Games Cards with Thumbnails & Modal Dialogs -->
         <div class="game-jams-block">
-          <div class="story-label">Playable Games & Game Jam Submissions</div>
-          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-            Over 11 rapid prototypes built under strict hackathon deadlines, exploring mechanics from tower defense to 3D movement remakes.
+          <div class="story-label">Playable Games & Rapid Prototypes</div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            Click any game card to inspect mechanics, development history, and play directly on itch.io.
           </p>
 
           <div class="jams-grid">
-            <a href="https://yazanfmg.itch.io/tickfall" target="_blank" rel="noopener noreferrer" class="jam-card">
-              <div class="jam-info">
-                <span class="jam-name">Tickfall</span>
-                <span class="jam-event">GMTK Game Jam · Action</span>
+            <!-- 1. Tickfall -->
+            <div class="game-art-card" 
+                 data-game-title="Tickfall" 
+                 data-game-genre="GMTK Game Jam · Action & Reflexes"
+                 data-game-img="assets/thumbnails/Tickfall_icon (1).png"
+                 data-game-desc="Built under strict 48-hour constraints for the GMTK Game Jam. Explores tense, micro-timed mechanics where players manipulate countdown timers to survive escalating environmental obstacles."
+                 data-game-engine="Unreal Engine 5"
+                 data-game-time="48 Hours"
+                 data-game-role="Sole Programmer & Game Designer"
+                 data-game-url="https://yazanfmg.itch.io/tickfall">
+              <img src="assets/thumbnails/Tickfall_icon (1).png" alt="Tickfall" class="game-art-bg">
+              <div class="game-art-tint"></div>
+              <div class="game-art-info">
+                <span class="game-art-title">Tickfall</span>
+                <span class="game-art-genre">GMTK Jam · Fast Action</span>
+                <span class="game-art-prompt"><i class="fa-solid fa-circle-info"></i> Click to inspect details</span>
               </div>
-              <span class="jam-icon"><i class="fa-solid fa-gamepad"></i></span>
-            </a>
+            </div>
 
-            <a href="https://yazanfmg.itch.io/towerfall-zombie-siege" target="_blank" rel="noopener noreferrer" class="jam-card">
-              <div class="jam-info">
-                <span class="jam-name">Towerfall: Zombie Siege</span>
-                <span class="jam-event">Survival Tower Defense</span>
+            <!-- 2. Towerfall: Zombie Siege -->
+            <div class="game-art-card" 
+                 data-game-title="Towerfall: Zombie Siege" 
+                 data-game-genre="Top-Down Survival · Wave Defense"
+                 data-game-img="assets/thumbnails/Towerfall_ Zombie Siege Itch.png"
+                 data-game-desc="A strategic survival wave defense game featuring dynamic enemy navigation meshes, upgrade trees, resource economics, and relentless zombie swarm logic."
+                 data-game-engine="Unreal Engine 5"
+                 data-game-time="Indie Release"
+                 data-game-role="System Architecture & Combat Mechanics"
+                 data-game-url="https://yazanfmg.itch.io/towerfall-zombie-siege">
+              <img src="assets/thumbnails/Towerfall_ Zombie Siege Itch.png" alt="Towerfall: Zombie Siege" class="game-art-bg">
+              <div class="game-art-tint"></div>
+              <div class="game-art-info">
+                <span class="game-art-title">Towerfall: Zombie Siege</span>
+                <span class="game-art-genre">Survival Wave Defense</span>
+                <span class="game-art-prompt"><i class="fa-solid fa-circle-info"></i> Click to inspect details</span>
               </div>
-              <span class="jam-icon"><i class="fa-solid fa-gamepad"></i></span>
-            </a>
+            </div>
 
-            <a href="https://yazanfmg.itch.io/feeding-frenzy-3d" target="_blank" rel="noopener noreferrer" class="jam-card">
-              <div class="jam-info">
-                <span class="jam-name">Feeding Frenzy 3D</span>
-                <span class="jam-event">Fan Remake · 3D Arcade</span>
+            <!-- 3. Feeding Frenzy 3D -->
+            <div class="game-art-card" 
+                 data-game-title="Feeding Frenzy 3D (Fan Remake)" 
+                 data-game-genre="3D Aquatic Arcade · Fan Recreation"
+                 data-game-img="assets/thumbnails/FeedingFrenzyItch.png"
+                 data-game-desc="A 3D reimagining of the classic underwater arcade hit. Re-engineered dynamic fish growth triggers, fluid movement physics in three dimensions, and predator AI flocking algorithms."
+                 data-game-engine="Unreal Engine 5"
+                 data-game-time="Prototype"
+                 data-game-role="3D Physics, Gameplay Programming & Animation"
+                 data-game-url="https://yazanfmg.itch.io/feeding-frenzy-3d">
+              <img src="assets/thumbnails/FeedingFrenzyItch.png" alt="Feeding Frenzy 3D" class="game-art-bg">
+              <div class="game-art-tint"></div>
+              <div class="game-art-info">
+                <span class="game-art-title">Feeding Frenzy 3D</span>
+                <span class="game-art-genre">3D Arcade Remake</span>
+                <span class="game-art-prompt"><i class="fa-solid fa-circle-info"></i> Click to inspect details</span>
               </div>
-              <span class="jam-icon"><i class="fa-solid fa-gamepad"></i></span>
-            </a>
+            </div>
 
-            <a href="https://yazanfmg.itch.io/cuphead-3d" target="_blank" rel="noopener noreferrer" class="jam-card">
-              <div class="jam-info">
-                <span class="jam-name">Cuphead 3D Remake</span>
-                <span class="jam-event">3D Boss Fight Concept</span>
+            <!-- 4. Cuphead 3D Remake -->
+            <div class="game-art-card" 
+                 data-game-title="Cuphead 3D Remake" 
+                 data-game-genre="3D Boss Arena · Action Platformer"
+                 data-game-img="assets/thumbnails/CupheadItchIcon.png"
+                 data-game-desc="Translating Cuphead's iconic 1930s cartoon 2D combat into an arena-style 3D third-person encounter. Features bullet patterns, precise dodge invulnerability windows, and multi-phase boss state graphs."
+                 data-game-engine="Unreal Engine 5"
+                 data-game-time="Remake Concept"
+                 data-game-role="Combat Programming & Boss AI Finite States"
+                 data-game-url="https://yazanfmg.itch.io/cuphead-3d">
+              <img src="assets/thumbnails/CupheadItchIcon.png" alt="Cuphead 3D" class="game-art-bg">
+              <div class="game-art-tint"></div>
+              <div class="game-art-info">
+                <span class="game-art-title">Cuphead 3D Remake</span>
+                <span class="game-art-genre">3D Boss Arena Concept</span>
+                <span class="game-art-prompt"><i class="fa-solid fa-circle-info"></i> Click to inspect details</span>
               </div>
-              <span class="jam-icon"><i class="fa-solid fa-gamepad"></i></span>
-            </a>
+            </div>
 
-            <a href="https://yazanfmg.itch.io/zangas-changes" target="_blank" rel="noopener noreferrer" class="jam-card">
-              <div class="jam-info">
-                <span class="jam-name">Zangas Changes</span>
-                <span class="jam-event">Zanga Game Jam Entry</span>
+            <!-- 5. Mario 3D Fan Game -->
+            <div class="game-art-card" 
+                 data-game-title="Mario 3D (Fan Game)" 
+                 data-game-genre="3D Platformer · Character Controller"
+                 data-game-img="assets/thumbnails/Mario 3d cover.png"
+                 data-game-desc="Technical study in tight character movement: custom acceleration curves, wall jumping mechanics, triple jump velocity boosts, and kinematic physics interaction."
+                 data-game-engine="Unreal Engine 5"
+                 data-game-time="Mechanic Study"
+                 data-game-role="Movement Tuning & Character Physics"
+                 data-game-url="https://yazanfmg.itch.io/mario3d">
+              <img src="assets/thumbnails/Mario 3d cover.png" alt="Mario 3D" class="game-art-bg">
+              <div class="game-art-tint"></div>
+              <div class="game-art-info">
+                <span class="game-art-title">Mario 3D Fan Game</span>
+                <span class="game-art-genre">Platformer Controller Study</span>
+                <span class="game-art-prompt"><i class="fa-solid fa-circle-info"></i> Click to inspect details</span>
               </div>
-              <span class="jam-icon"><i class="fa-solid fa-gamepad"></i></span>
-            </a>
+            </div>
 
-            <a href="https://yazanfmg.itch.io/looped-choices" target="_blank" rel="noopener noreferrer" class="jam-card">
-              <div class="jam-info">
-                <span class="jam-name">Looped Choices</span>
-                <span class="jam-event">Puzzle & Loop Mechanics</span>
+            <!-- 6. Iron Man Fan Game -->
+            <div class="game-art-card" 
+                 data-game-title="Iron Man (Fan Game)" 
+                 data-game-genre="Flight Physics & Superhero Action"
+                 data-game-img="assets/thumbnails/IronManGameIcon.png"
+                 data-game-desc="Flight physics exploration in Unreal Engine 5 featuring supersonic thruster acceleration, seamless ground-to-air transitions, target lock-on targeting systems, and audio feedback."
+                 data-game-engine="Unreal Engine 5"
+                 data-game-time="Indie Prototype"
+                 data-game-role="Flight Controller Programming & VFX Integration"
+                 data-game-url="https://yazanfmg.itch.io/ironman">
+              <img src="assets/thumbnails/IronManGameIcon.png" alt="Iron Man Fan Game" class="game-art-bg">
+              <div class="game-art-tint"></div>
+              <div class="game-art-info">
+                <span class="game-art-title">Iron Man Fan Game</span>
+                <span class="game-art-genre">Flight Physics System</span>
+                <span class="game-art-prompt"><i class="fa-solid fa-circle-info"></i> Click to inspect details</span>
               </div>
-              <span class="jam-icon"><i class="fa-solid fa-gamepad"></i></span>
-            </a>
+            </div>
 
-            <a href="https://yazanfmg.itch.io/chatgpt-flappy-bird" target="_blank" rel="noopener noreferrer" class="jam-card">
-              <div class="jam-info">
-                <span class="jam-name">ChatGPT Flappy Bird</span>
-                <span class="jam-event">AI Code Experiment</span>
+            <!-- 7. Ranch Land -->
+            <div class="game-art-card" 
+                 data-game-title="Ranch Land" 
+                 data-game-genre="Casual Simulation & Management"
+                 data-game-img="assets/thumbnails/Ranchland itchio logo.png"
+                 data-game-desc="Relaxing resource collection and ranch management game. Features inventory systems, soil plot interaction loops, economy balance, and responsive UI feedback."
+                 data-game-engine="Unreal Engine 5"
+                 data-game-time="Game Jam Prototype"
+                 data-game-role="Gameplay Systems & Inventory Architecture"
+                 data-game-url="https://yazanfmg.itch.io/ranch-land">
+              <img src="assets/thumbnails/Ranchland itchio logo.png" alt="Ranch Land" class="game-art-bg">
+              <div class="game-art-tint"></div>
+              <div class="game-art-info">
+                <span class="game-art-title">Ranch Land</span>
+                <span class="game-art-genre">Management & Simulation</span>
+                <span class="game-art-prompt"><i class="fa-solid fa-circle-info"></i> Click to inspect details</span>
               </div>
-              <span class="jam-icon"><i class="fa-solid fa-gamepad"></i></span>
-            </a>
+            </div>
 
-            <a href="https://yazanfmg.itch.io/abo-flah-game" target="_blank" rel="noopener noreferrer" class="jam-card">
-              <div class="jam-info">
-                <span class="jam-name">Abo Flah Game</span>
-                <span class="jam-event">Community Fan Game</span>
+            <!-- 8. Zangas Changes -->
+            <div class="game-art-card" 
+                 data-game-title="Zangas Changes" 
+                 data-game-genre="Zanga Game Jam Entry · Narrative Puzzle"
+                 data-game-img="assets/thumbnails/RoulyIcon.png"
+                 data-game-desc="Created for the regional Zanga Game Jam within 72 hours. Centered around rapid shifting environmental rules and perspective puzzles."
+                 data-game-engine="Unreal Engine 5"
+                 data-game-time="72 Hours"
+                 data-game-role="Game Design & Gameplay Blueprinting"
+                 data-game-url="https://yazanfmg.itch.io/zangas-changes">
+              <img src="assets/thumbnails/RoulyIcon.png" alt="Zangas Changes" class="game-art-bg">
+              <div class="game-art-tint"></div>
+              <div class="game-art-info">
+                <span class="game-art-title">Zangas Changes</span>
+                <span class="game-art-genre">Zanga Jam · Puzzle Mechanics</span>
+                <span class="game-art-prompt"><i class="fa-solid fa-circle-info"></i> Click to inspect details</span>
               </div>
-              <span class="jam-icon"><i class="fa-solid fa-gamepad"></i></span>
-            </a>
+            </div>
 
-            <a href="https://yazanfmg.itch.io/" target="_blank" rel="noopener noreferrer" class="jam-card jam-card-more">
-              <div class="jam-info">
-                <span class="jam-name">View All on itch.io</span>
-                <span class="jam-event">Mario 3D, Iron Man & more</span>
-              </div>
-              <span class="jam-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            <!-- 9. itch.io External Card -->
+            <a href="https://yazanfmg.itch.io/" target="_blank" rel="noopener noreferrer" class="game-art-card more-games-card">
+              <i class="fa-brands fa-itch-io" style="font-size: 2.2rem; color: var(--accent-red); margin-bottom: 0.5rem;"></i>
+              <span class="game-art-title">Explore All 11+ Titles</span>
+              <span class="game-art-genre">on yazanfmg.itch.io →</span>
             </a>
           </div>
         </div>
@@ -546,45 +653,86 @@
       </div>
     </section>
 
-    <!-- 3. CREATIVE SECTION -->
+    <!-- 3. CREATIVE & 3D SECTION -->
     <section id="creative">
       <div class="container">
         <div class="section-title-wrap">
-          <span class="section-label">03 / Production & Media</span>
-          <h2 class="section-heading">Creative Direction & Video Production</h2>
-          <p class="section-subtext">Translating technical concepts into high-retention video stories, motion graphics, and community content.</p>
+          <span class="section-label">03 / Production & 3D Media</span>
+          <h2 class="section-heading">Creative Direction, Scripting & 3D Modeling</h2>
+          <p class="section-subtext">Translating complex technical concepts into cinematic video breakdowns, 3D modeling pipelines, and high-retention content.</p>
         </div>
 
-        <div class="youtube-feature-card">
-          <div class="yt-card-info">
-            <span class="acc-mono">Content Platform</span>
-            <h3>Yazan FMG Channel & Technical Storytelling</h3>
-            <p>
-              I build and direct video content exploring gaming tech, AI workflows, and software development breakdowns. Leveraging Adobe Premiere Pro, After Effects, and Blender, I handle the complete creative cycle: scripting, visual pacing, audio engineering, and audience retention optimization.
-            </p>
-            <div class="yt-pipeline-strip">
-              <span>Scripting</span>
-              <span>·</span>
-              <span>Blender 3D</span>
-              <span>·</span>
-              <span>Premiere Pro</span>
-              <span>·</span>
-              <span>After Effects</span>
-              <span>·</span>
-              <span>Sound Design</span>
+        <div class="youtube-creator-showcase">
+          <!-- Top Hero Channel Banner -->
+          <div class="yt-hero-banner">
+            <div class="yt-banner-avatar-wrap">
+              <img src="assets/images/NewChannelProfile2.png" alt="Yazan FMG Channel Avatar" class="yt-banner-avatar">
             </div>
-            <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">
-              <i class="fa-brands fa-youtube"></i> Visit YouTube Channel (@yazanfmg)
-            </a>
+            <div class="yt-banner-text">
+              <span class="yt-channel-handle"><i class="fa-brands fa-youtube"></i> @yazanfmg</span>
+              <h3 class="yt-channel-title">Yazan FMG Productions</h3>
+            </div>
           </div>
 
-          <div class="yt-card-visual">
-            <div class="yt-placeholder">
-              <i class="fa-brands fa-youtube" style="font-size: 2.5rem; color: var(--accent-red);"></i>
-              <span>Yazan FMG Productions</span>
+          <!-- Content Grid: Technical Breakdown & Production Suite -->
+          <div class="yt-content-grid">
+            <div class="yt-content-left">
+              <p>
+                Video production and 3D modeling are core pillars of how I communicate engineering ideas. From in-depth breakdowns of game engine physics and AI architectures to cinematic gameplay montages, I direct every production step from scratch.
+              </p>
+
+              <div class="yt-pillars-list">
+                <div class="yt-pillar-item">
+                  <i class="fa-solid fa-cube yt-pillar-icon"></i>
+                  <div>
+                    <strong>Blender 3D Modeling & Asset Pipeline</strong>
+                    <span>Hard-surface asset modeling, UV unwrapping, environment blocking, and lighting setup for technical visualizations and game assets.</span>
+                  </div>
+                </div>
+
+                <div class="yt-pillar-item">
+                  <i class="fa-solid fa-pen-nib yt-pillar-icon"></i>
+                  <div>
+                    <strong>Scripting & Technical Narration</strong>
+                    <span>Structuring intricate technical topics into concise, captivating scripts with strict narrative pacing and zero filler.</span>
+                  </div>
+                </div>
+
+                <div class="yt-pillar-item">
+                  <i class="fa-solid fa-film yt-pillar-icon"></i>
+                  <div>
+                    <strong>Cinematic Post-Production & Sound Design</strong>
+                    <span>Advanced motion graphics in After Effects, color grading, multi-track audio mastering, and rhythm-synced pacing in Premiere Pro.</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="https://youtube.com/@yazanfmg" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">
+                <i class="fa-brands fa-youtube"></i> Watch Channel Content on YouTube (@yazanfmg)
+              </a>
+            </div>
+
+            <!-- Right Column: Creative Suite Card -->
+            <div class="yt-stats-card">
+              <h4><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-amber);"></i> Creative Arsenal</h4>
+              
+              <div class="creative-tools-tags">
+                <span class="creative-tool-tag"><i class="fa-solid fa-cube"></i> Blender 3D</span>
+                <span class="creative-tool-tag"><i class="fa-solid fa-video"></i> Adobe Premiere Pro</span>
+                <span class="creative-tool-tag"><i class="fa-solid fa-layer-group"></i> Adobe After Effects</span>
+                <span class="creative-tool-tag"><i class="fa-solid fa-image"></i> Adobe Photoshop</span>
+                <span class="creative-tool-tag"><i class="fa-solid fa-person-running"></i> Mixamo Animation</span>
+                <span class="creative-tool-tag"><i class="fa-solid fa-clapperboard"></i> Unreal Sequencer</span>
+              </div>
+
+              <div style="padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Why this matters for technical teams:</strong>
+                Being able to design 3D assets, write clear documentation scripts, and produce high-quality video demonstrations allows me to explain security vulnerabilities and system architectures effortlessly to both technical engineers and non-technical stakeholders.
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -719,6 +867,18 @@
       <span>Built with clean semantic HTML, CSS & Vanilla JS</span>
     </div>
   </footer>
+
+  <!-- ============================================================
+       CENTERED BLURRED MODAL DIALOG (FOR GAMES & MEDIA LIGHTBOX)
+       ============================================================ -->
+  <div id="portfolio-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container" id="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modal-dynamic-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

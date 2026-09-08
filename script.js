@@ -1,6 +1,7 @@
 // ============================================================
-// Yazan Mashaqbeh Portfolio — script.js v3
-// Interactive Accordions, Carousel, Video Tabs, Toast & Navigation
+// Yazan Mashaqbeh Portfolio — script.js v3.2
+// Smooth navigation, accordions, vertical phone carousel & video,
+// and centered backdrop-blur modal system for games and media.
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu when clicking nav links
+    // Close menu on nav click
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('mobile-active');
@@ -36,12 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Navigation Active State on Scroll
+  // 2. Smooth Navigation Active Highlight on Scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
 
   const highlightNavOnScroll = () => {
-    const scrollY = window.pageYOffset + 120;
+    const scrollY = window.pageYOffset + 140;
 
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
@@ -73,47 +74,49 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!body) return;
 
       if (isExpanded) {
-        // Collapse
         trigger.setAttribute('aria-expanded', 'false');
         body.setAttribute('hidden', '');
       } else {
-        // Expand
         trigger.setAttribute('aria-expanded', 'true');
         body.removeAttribute('hidden');
       }
     });
   });
 
-  // 4. Media Type Tabs Switcher (e.g. Screenshots vs Feature Videos in CyberGuard)
+  // 4. Media Type Switcher: Screenshots vs Videos (Phone Mockup)
   const mediaTabBtns = document.querySelectorAll('.media-tab-btn');
+  const videoSubnav = document.getElementById('cg-video-subnav');
 
   mediaTabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const parent = btn.closest('.accordion-body') || document;
       const targetId = btn.getAttribute('data-tab');
 
-      // Update button active state
-      parent.querySelectorAll('.media-tab-btn').forEach(b => b.classList.remove('active'));
+      mediaTabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      // Update panels visibility
-      parent.querySelectorAll('.media-tab-content').forEach(panel => {
+      document.querySelectorAll('.media-tab-content').forEach(panel => {
         if (panel.id === targetId) {
           panel.classList.remove('hidden');
         } else {
           panel.classList.add('hidden');
-          // Pause any video if switching away
-          const videos = panel.querySelectorAll('video');
-          videos.forEach(v => v.pause());
+          // Pause phone videos if switching away
+          panel.querySelectorAll('video').forEach(v => v.pause());
         }
       });
+
+      // Show or hide the video subnav pills
+      if (targetId === 'cg-videos-panel') {
+        if (videoSubnav) videoSubnav.classList.remove('hidden');
+      } else {
+        if (videoSubnav) videoSubnav.classList.add('hidden');
+      }
     });
   });
 
-  // 5. Image Carousel for CyberGuard
-  const carousels = document.querySelectorAll('.img-carousel');
+  // 5. Vertical Image Carousel in Phone Frame
+  const verticalCarousels = document.querySelectorAll('.vertical-carousel');
 
-  carousels.forEach(carousel => {
+  verticalCarousels.forEach(carousel => {
     const track = carousel.querySelector('.carousel-track');
     const slides = carousel.querySelectorAll('.carousel-slide');
     const prevBtn = carousel.querySelector('.carousel-prev');
@@ -160,23 +163,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Feature Video Tabs (for CyberGuard video gallery)
-  const vtabBtns = document.querySelectorAll('.vtab-btn');
+  // 6. Feature Video Tabs (for CyberGuard phone frame)
+  const vtabBtns = document.querySelectorAll('.phone-vtab-nav .vtab-btn');
 
   vtabBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const parent = btn.closest('.video-tab-panel');
-      if (!parent) return;
-
       const targetVideoId = btn.getAttribute('data-video');
 
-      // Button active styles
-      parent.querySelectorAll('.vtab-btn').forEach(b => b.classList.remove('active'));
+      vtabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      // Video swap
-      parent.querySelectorAll('.cg-video-item').forEach(item => {
+      document.querySelectorAll('.phone-video-item').forEach(item => {
         const video = item.querySelector('video');
         if (item.id === targetVideoId) {
           item.classList.remove('hidden');
@@ -188,7 +186,142 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. Copy Email with Feedback Toast
+  // ============================================================
+  // 7. CENTERED BLURRED MODAL DIALOG & LIGHTBOX SYSTEM
+  // ============================================================
+  const modal = document.getElementById('portfolio-modal');
+  const modalContainer = document.getElementById('modal-container');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
+  const modalDynamicContent = document.getElementById('modal-dynamic-content');
+
+  const openModal = (htmlContent, isVerticalMedia = false) => {
+    if (!modal || !modalDynamicContent) return;
+
+    modalDynamicContent.innerHTML = htmlContent;
+
+    if (isVerticalMedia) {
+      modalContainer.className = 'modal-container media-lightbox-container vertical-mode';
+    } else if (htmlContent.includes('lightbox-media-box')) {
+      modalContainer.className = 'modal-container media-lightbox-container';
+    } else {
+      modalContainer.className = 'modal-container';
+    }
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  };
+
+  const closeModal = () => {
+    if (!modal) return;
+
+    // Pause any playing videos inside modal before closing
+    const modalVideos = modal.querySelectorAll('video');
+    modalVideos.forEach(v => v.pause());
+
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  };
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeModal);
+  }
+
+  if (modal) {
+    // Click outside to close (backdrop click)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  }
+
+  // Hook up Game Cards to Detailed Centered Modal
+  const gameCards = document.querySelectorAll('.game-art-card[data-game-title]');
+
+  gameCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.getAttribute('data-game-title');
+      const genre = card.getAttribute('data-game-genre');
+      const img = card.getAttribute('data-game-img');
+      const desc = card.getAttribute('data-game-desc');
+      const engine = card.getAttribute('data-game-engine');
+      const time = card.getAttribute('data-game-time');
+      const role = card.getAttribute('data-game-role');
+      const url = card.getAttribute('data-game-url');
+
+      const modalHtml = `
+        <div class="modal-header-visual">
+          <img src="${img}" alt="${title}">
+        </div>
+        <div class="modal-genre-tag">${genre}</div>
+        <h3 class="modal-title">${title}</h3>
+        <p class="modal-description">${desc}</p>
+        <div class="modal-tech-specs">
+          <div><span>Engine / Framework:</span> <span>${engine}</span></div>
+          <div><span>Development Time:</span> <span>${time}</span></div>
+          <div><span>My Contribution:</span> <span>${role}</span></div>
+        </div>
+        <div class="modal-actions">
+          <a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-itch">
+            <i class="fa-brands fa-itch-io"></i> Play & Download on itch.io
+          </a>
+        </div>
+      `;
+
+      openModal(modalHtml, false);
+    });
+  });
+
+  // Hook up CyberGuard Screenshots & Videos to Centered Lightbox
+  const zoomableSlides = document.querySelectorAll('.carousel-slide[data-media-src]');
+  zoomableSlides.forEach(slide => {
+    slide.addEventListener('click', () => {
+      const src = slide.getAttribute('data-media-src');
+      const caption = slide.getAttribute('data-caption') || '';
+
+      const lightboxHtml = `
+        <div class="lightbox-media-box">
+          <img src="${src}" alt="${caption}">
+          <div class="lightbox-caption">${caption}</div>
+        </div>
+      `;
+
+      openModal(lightboxHtml, true);
+    });
+  });
+
+  const zoomableVideos = document.querySelectorAll('.phone-video-item[data-media-src]');
+  zoomableVideos.forEach(vItem => {
+    vItem.addEventListener('click', (e) => {
+      // If user clicked the native video controls, don't open modal
+      if (e.target.tagName.toLowerCase() === 'video') return;
+
+      const src = vItem.getAttribute('data-media-src');
+      const caption = vItem.getAttribute('data-caption') || '';
+
+      const lightboxHtml = `
+        <div class="lightbox-media-box">
+          <video controls autoplay class="fullscreen-lightbox-video">
+            <source src="${src}" type="video/mp4">
+          </video>
+          <div class="lightbox-caption">${caption}</div>
+        </div>
+      `;
+
+      openModal(lightboxHtml, true);
+    });
+  });
+
+  // 8. Copy Email with Toast Feedback
   window.copyEmail = function (emailText) {
     const emailToCopy = emailText || 'yazanfmg@gmail.com';
 
