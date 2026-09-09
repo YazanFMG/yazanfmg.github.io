@@ -152,6 +152,18 @@ section { padding: 4.75rem 0; }
   font-size: 1.15rem;
 }
 
+.brand-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: inline-block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.08);
+}
+
 .logo-badge {
   background: var(--accent-amber);
   color: #11110F;
