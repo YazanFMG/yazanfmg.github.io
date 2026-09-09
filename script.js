@@ -132,6 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
       currentIndex = (index + totalSlides) % totalSlides;
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active-slide', idx === currentIndex);
+      });
+
       dots.forEach((dot, idx) => {
         if (idx === currentIndex) {
           dot.classList.add('active');
@@ -140,6 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     };
+
+    updateCarousel(0);
 
     if (prevBtn) {
       prevBtn.addEventListener('click', (e) => {
@@ -197,6 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const openModal = (htmlContent, isVerticalMedia = false) => {
     if (!modal || !modalDynamicContent) return;
 
+    // Pause any background phone videos so audio does not conflict
+    document.querySelectorAll('video').forEach(v => {
+      if (!modal.contains(v)) v.pause();
+    });
+
     modalDynamicContent.innerHTML = htmlContent;
 
     if (isVerticalMedia) {
@@ -215,13 +226,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeModal = () => {
     if (!modal) return;
 
-    // Pause any playing videos inside modal before closing
+    // Pause and clear any playing videos inside modal before closing
     const modalVideos = modal.querySelectorAll('video');
-    modalVideos.forEach(v => v.pause());
+    modalVideos.forEach(v => {
+      v.pause();
+      v.src = '';
+    });
 
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
+    modalDynamicContent.innerHTML = '';
   };
 
   if (modalCloseBtn) {
@@ -283,22 +298,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const zoomableElements = document.querySelectorAll('[data-media-src]');
   zoomableElements.forEach(el => {
     el.addEventListener('click', (e) => {
-      // If user clicked the native video controls inside el, don't open modal
-      if (e.target.tagName && e.target.tagName.toLowerCase() === 'video') return;
+      // If user clicked a link or carousel button (but not zoom button), don't open modal
       if (e.target.closest('a') || e.target.closest('button.carousel-btn') || e.target.closest('button.carousel-dot')) return;
+      
+      // If clicked native video controls (and not the explicit zoom button), let native player handle it
+      if (e.target.tagName && e.target.tagName.toLowerCase() === 'video' && !e.target.closest('.phone-video-zoom-btn')) return;
 
       const src = el.getAttribute('data-media-src');
       if (!src) return;
 
       const caption = el.getAttribute('data-caption') || '';
-      const isVideo = src.endsWith('.mp4') || src.endsWith('.webm');
-      const isVertical = el.classList.contains('carousel-slide') || el.classList.contains('phone-video-item');
+      const isVideo = src.includes('.mp4') || src.includes('.webm');
+      const isVertical = el.classList.contains('carousel-slide') || el.classList.contains('phone-video-item') || src.includes('cyberguard');
 
       let lightboxHtml = '';
       if (isVideo) {
         lightboxHtml = `
           <div class="lightbox-media-box">
-            <video controls autoplay class="fullscreen-lightbox-video">
+            <video controls controlsList="nofullscreen" playsinline autoplay class="fullscreen-lightbox-video">
               <source src="${src}" type="video/mp4">
             </video>
             ${caption ? `<div class="lightbox-caption">${caption}</div>` : ''}
@@ -316,6 +333,91 @@ document.addEventListener('DOMContentLoaded', () => {
       openModal(lightboxHtml, isVertical);
     });
   });
+
+  // Dedicated zoom button on phone video items
+  document.querySelectorAll('.phone-video-zoom-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const parent = btn.closest('.phone-video-item');
+      if (!parent) return;
+
+      const src = parent.getAttribute('data-media-src');
+      const caption = parent.getAttribute('data-caption') || '';
+      if (src) {
+        openModal(`
+          <div class="lightbox-media-box">
+            <video controls controlsList="nofullscreen" playsinline autoplay class="fullscreen-lightbox-video">
+              <source src="${src}" type="video/mp4">
+            </video>
+            ${caption ? `<div class="lightbox-caption">${caption}</div>` : ''}
+          </div>
+        `, true);
+      }
+    });
+  });
+
+  // Hook up the CyberGuard phone "Click to Zoom Fullscreen" button beneath the phone frame
+  const cgExpandBtn = document.getElementById('cg-expand-btn');
+  if (cgExpandBtn) {
+    cgExpandBtn.addEventListener('click', () => {
+      const activePanel = document.querySelector('.phone-screen-content .media-tab-content:not(.hidden)');
+      if (activePanel) {
+        if (activePanel.id === 'cg-videos-panel') {
+          const activeVideo = activePanel.querySelector('.phone-video-item:not(.hidden)');
+          if (activeVideo) {
+            const src = activeVideo.getAttribute('data-media-src');
+            const caption = activeVideo.getAttribute('data-caption') || '';
+            openModal(`
+              <div class="lightbox-media-box">
+                <video controls controlsList="nofullscreen" playsinline autoplay class="fullscreen-lightbox-video">
+                  <source src="${src}" type="video/mp4">
+                </video>
+                ${caption ? `<div class="lightbox-caption">${caption}</div>` : ''}
+              </div>
+            `, true);
+          }
+        } else {
+          // Screenshots panel - open active slide
+          const activeSlide = activePanel.querySelector('.carousel-slide.active-slide') || activePanel.querySelector('.carousel-slide');
+          if (activeSlide) {
+            const src = activeSlide.getAttribute('data-media-src');
+            const caption = activeSlide.getAttribute('data-caption') || '';
+            openModal(`
+              <div class="lightbox-media-box">
+                <img src="${src}" alt="${caption}">
+                ${caption ? `<div class="lightbox-caption">${caption}</div>` : ''}
+              </div>
+            `, true);
+          }
+        }
+      }
+    });
+  }
+
+  // Intercept native browser video fullscreen inside phone mockup to open our 9:16 Shorts modal instead of stretching
+  const handleNativeFullscreen = () => {
+    const fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+    if (fsEl && fsEl.tagName === 'VIDEO') {
+      const parent = fsEl.closest('.phone-video-item');
+      if (parent) {
+        if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
+        if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        fsEl.pause();
+        const src = parent.getAttribute('data-media-src');
+        const caption = parent.getAttribute('data-caption') || '';
+        openModal(`
+          <div class="lightbox-media-box">
+            <video controls controlsList="nofullscreen" playsinline autoplay class="fullscreen-lightbox-video">
+              <source src="${src}" type="video/mp4">
+            </video>
+            ${caption ? `<div class="lightbox-caption">${caption}</div>` : ''}
+          </div>
+        `, true);
+      }
+    }
+  };
+  document.addEventListener('fullscreenchange', handleNativeFullscreen);
+  document.addEventListener('webkitfullscreenchange', handleNativeFullscreen);
 
   // 8. Copy Email with Toast Feedback
   window.copyEmail = function (emailText) {

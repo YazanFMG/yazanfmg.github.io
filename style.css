@@ -153,10 +153,13 @@ section { padding: 4.75rem 0; }
 }
 
 .brand-logo-img {
-  width: 32px;
-  height: 32px;
+  width: 34px !important;
+  height: 34px !important;
+  max-width: 34px !important;
+  max-height: 34px !important;
   object-fit: contain;
   display: inline-block;
+  vertical-align: middle;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
@@ -662,11 +665,28 @@ section { padding: 4.75rem 0; }
 }
 
 .phone-fullscreen-hint {
-  font-size: 0.72rem;
-  color: var(--text-dim);
+  font-size: 0.74rem;
+  color: var(--accent-amber);
   font-family: var(--font-mono);
-  margin-top: 0.5rem;
+  margin-top: 0.65rem;
   text-align: center;
+  background: rgba(242, 166, 90, 0.08);
+  border: 1px dashed var(--border-amber);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  transition: var(--transition);
+  width: 280px;
+}
+
+.phone-fullscreen-hint:hover {
+  background: rgba(242, 166, 90, 0.18);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .media-tabs-nav {
@@ -830,6 +850,35 @@ section { padding: 4.75rem 0; }
   object-fit: cover;
   background: #000;
   outline: none;
+}
+
+.phone-video-zoom-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(18, 17, 15, 0.88);
+  border: 1px solid var(--border-amber);
+  color: var(--accent-amber);
+  padding: 0.28rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  z-index: 20;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: var(--transition);
+}
+
+.phone-video-zoom-btn:hover {
+  background: var(--accent-amber);
+  color: #11110f;
+  transform: scale(1.05);
 }
 
 /* Security Evidence & Labs Grid */
@@ -1322,21 +1371,22 @@ footer {
 /* Centered Blurred Modal Lightbox */
 .modal-backdrop {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(8, 8, 7, 0.85);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  background: rgba(8, 8, 7, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  z-index: 1000;
+  z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
+  overflow: hidden;
 }
 
 .modal-backdrop.active {
@@ -1352,43 +1402,68 @@ footer {
   max-width: 640px;
   width: 100%;
   max-height: 90vh;
+  max-height: 90dvh;
   overflow-y: auto;
   position: relative;
-  transform: scale(0.95) translateY(15px);
+  transform: scale(0.96);
   transition: transform 0.25s ease;
   padding: 2rem;
+  margin: auto;
 }
 
 .modal-backdrop.active .modal-container {
-  transform: scale(1) translateY(0);
+  transform: scale(1);
 }
 
 .modal-container.media-lightbox-container {
-  padding: 1.5rem;
-  background: rgba(24, 23, 21, 0.95);
+  padding: 0.85rem;
+  background: rgba(18, 17, 15, 0.96);
+  max-width: fit-content;
+  width: auto;
+  max-height: 94vh;
+  max-height: 94dvh;
+  overflow: hidden !important; /* Eliminates scrollbar/wheel completely */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-container.media-lightbox-container.vertical-mode {
-  max-width: 400px;
-  padding: 1.25rem 1rem;
+  max-width: 95vw;
+  width: auto;
+  padding: 0.65rem;
 }
 
 .modal-container.media-lightbox-container.vertical-mode .lightbox-media-box {
-  width: fit-content;
+  width: auto;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modal-container.media-lightbox-container.vertical-mode .lightbox-media-box video,
 .modal-container.media-lightbox-container.vertical-mode .lightbox-media-box img {
-  height: 78vh;
+  height: 68vh;
+  height: 68dvh;
+  max-height: 580px;
   width: auto !important;
-  max-width: calc(78vh * 9 / 16);
   aspect-ratio: 9 / 16;
+  max-width: calc(68dvh * 9 / 16);
   object-fit: contain;
   background: #000;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.95);
+}
+
+.modal-container.media-lightbox-container .modal-close-btn {
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
 .modal-close-btn {
@@ -1451,22 +1526,28 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .lightbox-media-box img,
 .lightbox-media-box video {
-  max-height: 75vh;
+  max-height: 70vh;
+  max-height: 70dvh;
+  max-width: 90vw;
   width: auto;
-  max-width: 100%;
+  height: auto;
+  object-fit: contain;
   border-radius: var(--radius-sm);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 .lightbox-caption {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   text-align: center;
+  max-width: 90vw;
 }
 
 /* Experiment item — blurred tinted thumbnail background */
@@ -1653,4 +1734,25 @@ footer {
   .proof-items { flex-direction: column; }
   .proof-sep { display: none; }
   .pdf-iframe-wrapper { height: 380px; }
+
+  /* Mobile Modal & Lightbox Adjustments (no scroll wheel, 9:16 locked, centered) */
+  .modal-backdrop {
+    padding: 0.5rem;
+  }
+  .modal-container.media-lightbox-container {
+    padding: 0.45rem;
+    max-height: 92dvh;
+  }
+  .modal-container.media-lightbox-container.vertical-mode .lightbox-media-box video,
+  .modal-container.media-lightbox-container.vertical-mode .lightbox-media-box img {
+    height: 62dvh;
+    max-height: 480px;
+    max-width: calc(62dvh * 9 / 16);
+  }
+  .lightbox-media-box img,
+  .lightbox-media-box video {
+    max-height: 62dvh;
+    max-width: 88vw;
+  }
 }
+

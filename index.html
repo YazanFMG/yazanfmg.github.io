@@ -17,7 +17,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/YazanLOGO.png">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=5.4">
 </head>
 <body>
 
@@ -29,7 +29,7 @@
   <header class="navbar">
     <div class="container nav-container">
       <a href="#home" class="brand-logo">
-        <img src="assets/images/YazanLOGO.png" alt="Yazan Mashaqbeh Logo" class="brand-logo-img">
+        <img src="assets/images/YazanLOGO.png" alt="Yazan Mashaqbeh Logo" class="brand-logo-img" width="34" height="34" style="width:34px; height:34px; object-fit:contain;">
         <span>Yazan Mashaqbeh</span>
       </a>
 
@@ -283,28 +283,35 @@
                   <div id="cg-videos-panel" class="media-tab-content hidden" style="width:100%; height:100%;">
                     <div class="phone-video-panel">
                       <div id="cgv-auditor" class="phone-video-item" data-media-src="assets/videos/cyberguard/App-Auditor.mp4" data-caption="App Auditor Demo: Scanning System Permissions">
+                        <button type="button" class="phone-video-zoom-btn" title="Zoom in 9:16 Shorts View"><i class="fa-solid fa-expand"></i> Zoom</button>
                         <video controls preload="metadata"><source src="assets/videos/cyberguard/App-Auditor.mp4" type="video/mp4"></video>
                       </div>
                       <div id="cgv-link" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/Link-Scanner.mp4" data-caption="Link Scanner Demo: URL Inspection">
+                        <button type="button" class="phone-video-zoom-btn" title="Zoom in 9:16 Shorts View"><i class="fa-solid fa-expand"></i> Zoom</button>
                         <video controls preload="metadata"><source src="assets/videos/cyberguard/Link-Scanner.mp4" type="video/mp4"></video>
                       </div>
                       <div id="cgv-breach" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/Password-Breach-Check.mp4" data-caption="Password Breach Check Demo">
+                        <button type="button" class="phone-video-zoom-btn" title="Zoom in 9:16 Shorts View"><i class="fa-solid fa-expand"></i> Zoom</button>
                         <video controls preload="metadata"><source src="assets/videos/cyberguard/Password-Breach-Check.mp4" type="video/mp4"></video>
                       </div>
                       <div id="cgv-hub" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/Security-Awareness-Hub.mp4" data-caption="Security Education Hub Demo">
+                        <button type="button" class="phone-video-zoom-btn" title="Zoom in 9:16 Shorts View"><i class="fa-solid fa-expand"></i> Zoom</button>
                         <video controls preload="metadata"><source src="assets/videos/cyberguard/Security-Awareness-Hub.mp4" type="video/mp4"></video>
                       </div>
                       <div id="cgv-recover" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/I-Got-Hacked-Recover-Account.mp4" data-caption="Account Recovery Protocol Demo">
+                        <button type="button" class="phone-video-zoom-btn" title="Zoom in 9:16 Shorts View"><i class="fa-solid fa-expand"></i> Zoom</button>
                         <video controls preload="metadata"><source src="assets/videos/cyberguard/I-Got-Hacked-Recover-Account.mp4" type="video/mp4"></video>
                       </div>
                       <div id="cgv-secure" class="phone-video-item hidden" data-media-src="assets/videos/cyberguard/I-Got-Hacked-Secure-Device.mp4" data-caption="Device Isolation Protocol Demo">
+                        <button type="button" class="phone-video-zoom-btn" title="Zoom in 9:16 Shorts View"><i class="fa-solid fa-expand"></i> Zoom</button>
                         <video controls preload="metadata"><source src="assets/videos/cyberguard/I-Got-Hacked-Secure-Device.mp4" type="video/mp4"></video>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="phone-fullscreen-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Click screen to expand</div>
+              <button type="button" class="phone-fullscreen-hint" id="cg-expand-btn">
+                <i class="fa-solid fa-expand"></i> Click to Zoom Fullscreen (9:16 Shorts View)
+              </button>
             </div>
           </div>
         </div>
